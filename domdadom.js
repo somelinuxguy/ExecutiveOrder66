@@ -6,7 +6,7 @@ var clearDisplay = function() {
     }
 }
 
-var populateOrderPage = function(postList) {
+var populatePosts = function(postList) {
     console.log(postList);
     clearDisplay();
 
@@ -44,13 +44,15 @@ var populateOrderPage = function(postList) {
         postRating.classList.add('rating');
         postText.appendChild(postRating);
 
-        for (var i = 0; i < Number(place.placeRating); i++) {
+        for (var i = 0; i < Number(post.placeRating); i++) {
             var ratingGem = document.createElement('img');
             ratingGem.setAttribute('src', 'Images/gem.png');
+            ratingGem.classList.add('ratinggem');
             postRating.appendChild(ratingGem);
         }
 
         var postMap = document.createElement('iframe');
+        postMap.classList.add('googleIMG');
         postMap.classList.add('map');
         postMap.setAttribute('width', '300');
         postMap.setAttribute('height', '300');
