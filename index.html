@@ -3,13 +3,44 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>HGAtl</title>
+    <title>HGA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link rel="shortcut icon" type="image/png" href="Images/gem.png" />
+    <link rel="stylesheet" type="text/css" media="screen" href="modal/modal.css" />
+    <link rel="shortcut icon" type="image/png" href="Images/gem2.png" />
+    <script src="main.js"></script>
 </head>
 <body>
+    
     <div class="mainflex">
+            <div class="modaloutter">
+                    <div class="modalcontent">
+                        <form class="submissionform">
+                            <label>
+                                <span>Name:</span>  
+                                <input class="usernameinput" name="username" required>
+                            </label>
+                            <label>
+                                <span>Place:</span>  
+                                <input class="locationinput" name="location" required>
+                            </label>
+                            <label>
+                                <span>Experience:</span>  
+                                <textarea class="experienceinput" name="review" required></textarea>
+                            </label>
+                            <label>
+                                <span>rating:</span>
+                                <img class="ratinggem" src="Images/gem3.png">
+                                <img class="ratinggem" src="Images/gem3.png">
+                                <img class="ratinggem" src="Images/gem3.png">
+                                <img class="ratinggem" src="Images/gem3.png">
+                                <img class="ratinggem" src="Images/gem3.png">   
+                            </label>
+                            <button class="newgembutton" type="submit">Submit Your Gem!</button>  
+                        </form>
+                        <button class="closebutton">&times;</button>
+                    </div>
+                </div>
         <div class="mainlogo">
             <span class="headertext">
                 Hidden Gem Atlanta
@@ -19,37 +50,40 @@
             <input class="searchbar" type="text" placeholder="Search Gems by Keyword">
         </div>
         <div class="buttons">
-            <button class="buttonclass" type="button" value="Post">Post New Gem</button>
+            <button name="submit" class="buttonclass" type="button" value="Post">Post New Gem</button>
             <button class="buttonclass" type="button" value="Filter">Filter by Type</button>
         </div>
         <div class="postbody">
             <div class="post">
-                <img src="Images/krogst.jpg" style="width: 300px; height: 300px;">
+
+                <img class="googleIMG" src="Images/krogst.jpg">
                 <div class="posttext">
                     <div class="location">Krog Street Tunnel</div>
-                    <div class="author">Submitted by Matthew</div>
+                    <div class="author">Scenic location submitted by Matthew</div>
                     <div class="postcontent">
                         I had a great experience I got mugged by a group of homeless
                         lesbians.  Then a cat urinated on my head.  A dog ate my shoes,
                         and then I got stabbed by a kid wielding a discared syringe.  I love 
                         little 5 points.  I would suggest it for kids and adults of all ages.
-                        Everyone loves a contagious virus.
+                        Everyone loves AIDS.  We all have AIDS.  AIDSAIDSAIDAIDS.
                     </div>
                     <div class="rating">
-                        <img class="ratinggem" src="Images/gem.png">
-                        <img class="ratinggem" src="Images/gem.png">
-                        <img class="ratinggem" src="Images/gem.png">
-                        <img class="ratinggem" src="Images/gem.png">
-                        <img class="ratinggem" src="Images/gem.png">
+                        <img class="ratinggem" src="Images/gem3.png">
+                        <img class="ratinggem" src="Images/gem3.png">
+                        <img class="ratinggem" src="Images/gem3.png">
+                        <img class="ratinggem" src="Images/gem3.png">
+                        <img class="ratinggem" src="Images/gem3.png">
                     </div>
                 </div>
+                <img class="googleIMG" src="Images/Mapsample.jpg">
             </div>
-        </div>
+            </div>
     </div>
     <script src="keys.js"></script>
     <script src="google.js"></script>
     <script src="firebase.js"></script>
-    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"> </script>    
+    <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.js"></script>    
     <script src="main.js"></script>
+    <script src="modal/modal.js"></script>
 </body>
 </html>
