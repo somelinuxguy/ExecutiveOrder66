@@ -17,7 +17,7 @@ body {
 .headertext {
     font-family: "Aguafina Script";
     background-color: rgba(169, 169, 169, 0.651);
-    background-image: url('Images/gem.png');
+    background-image: url('Images/gem2.png');
     background-repeat: no-repeat;
     background-position: center;
     border: 3px solid darkred;
@@ -92,12 +92,16 @@ body {
     align-items: center;
 }
 .post {
-    padding: 10px;
+    padding: 40px;
     width: 90%;
     display: flex;
-    background: darkred;
-    border: 3px solid whitesmoke;
+    background-image: url('Images/GemBGrough.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100%;
+    background-origin: unset;
     border-radius: 10px;
+    justify-content: space-around;
 }
 
 .location {
@@ -127,15 +131,34 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     font-family: Lobster;
+
+    background: rgba(245, 245, 245, 0.8);
+    border-radius: 15px;
+    padding: 10px;
+
 }
 
 .ratinggem {
     height: 40px;
-    padding: 20px;
+
+    padding: 5px;
 }
 
 .posttext {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    flex-basis: 45%;
+}
+
+.googleIMG {
+    height: 250px;
+    width: 250px; 
+    flex-basis: 20%;
+    margin: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    border-radius: 15px;
 }
