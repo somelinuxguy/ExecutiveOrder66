@@ -76,6 +76,7 @@ body {
 
 .buttonclass:hover {
     font-size: 18px;
+    color: whitesmoke;
     transition: ease;
 }
 
@@ -147,8 +148,7 @@ body {
 .posttext {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
+    justify-content: space-around;
     flex-basis: 45%;
 }
 
@@ -161,4 +161,9 @@ body {
     margin-bottom: 30px;
     border: 2px solid black;
     border-radius: 15px;
+}
+
+label {
+    font-size: 16px;
+    font-family: Lobster;
 }
