@@ -131,13 +131,16 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     font-family: Lobster;
+
     background: rgba(245, 245, 245, 0.8);
     border-radius: 15px;
     padding: 10px;
+
 }
 
 .ratinggem {
     height: 40px;
+
     padding: 5px;
 }
 
@@ -145,6 +148,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     flex-basis: 45%;
 }
 
