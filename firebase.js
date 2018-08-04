@@ -10,7 +10,7 @@ var config = {
 
 firebase.initializeApp(config);
 var database = firebase.database();
-var postlist = [];
+var postList = [];
 
 var convertToArray = function(data, orderList) {
   Object.values(data).forEach(function(post) {
@@ -27,11 +27,11 @@ var savePosts = function(postData) {
 }
 
 var loadPosts = function(postData) {
-  postList= [];
+  postList = [];
   console.log('loading saved posts...');
   firebase.database().ref('posts').once('value').then(function(data) {
-    console.log(data);
-    convertToArray(data, postList);
-    populateOrderPage(postList);
+    console.log(data.val());
+    convertToArray(data.val(), postList);
+    populatePosts(postList);
   });
 }
