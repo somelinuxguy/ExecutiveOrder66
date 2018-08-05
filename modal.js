@@ -1,4 +1,4 @@
-var hideModal = function(event) {
+var hideModal = function() {
     modal.classList.remove("showmodal");
 }
 
@@ -10,7 +10,7 @@ var windowOnClick = function(event) {
 
 var toggleModal = function(event) {
     event.preventDefault();
-    modal.classList.add("showmodal");
+    modal.classList.toggle("showmodal");
 }
 
 var modal = document.querySelector('.modaloutter')
@@ -20,10 +20,4 @@ var closeButton = document.querySelector(".closebutton")
 submit.addEventListener('click', toggleModal);
 closeButton.addEventListener('click', hideModal);
 
-var toggleModal = function(event) {
-    event.preventDefault();
-    modaloutter.classList.add("showmodal");
-}
-
 window.addEventListener('click', windowOnClick);
-close
