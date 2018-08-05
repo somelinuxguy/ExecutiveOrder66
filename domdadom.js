@@ -75,20 +75,23 @@ var populatePosts = function(postList) {
 
 var newPost = function(event) {
     event.preventDefault();
-    console.log('New Post. Saving...');
-    var myAuthor = document.querySelector('[name="author"]');
+    var handleURL = function(url) {
+        console.log('New Post. Saving...');
+        var myAuthor = document.querySelector('[name="author"]');
+        var myRating = document.querySelector('[name="rating"]');
+        var myPlaceType = document.querySelector('[name="placeType"]');
+        var myExperience = document.querySelector('[name="placeExperience"]');
+        var newPostData = {
+            placeName: myPlace.value,
+            author: myAuthor.value,
+            placeType: myPlaceType.value,
+            placeExperience: myExperience.value,
+            placeRating: myRating.value,
+            placeImageURL: url
+            };
+        console.log(newPostData);
+        savePost(newPostData);
+    };
     var myPlace = document.querySelector('[name="placeName"]');
-    var myRating = document.querySelector('[name="rating"]');
-    var myPlaceType = document.querySelector('[name="placeType"]');
-    var myExperience = document.querySelector('[name="placeExperience"]');
-    var newPostData = {
-        placeName: myPlace.value,
-        author: myAuthor.value,
-        placeType: myPlaceType.value,
-        placeExperience: myExperience.value,
-        placeRating: myRating.value,
-        placeImageURL: "http://sect.net/placeholder.jpg"
-        };
-    console.log(newPostData);
-    savePost(newPostData);
+    getImgSrc(myPlace.value, handleURL);
 }
