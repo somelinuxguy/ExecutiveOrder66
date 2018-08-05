@@ -65,21 +65,30 @@ var populatePosts = function(postList) {
     });
 }
 
+// {   placeName: string,
+//     author: string,
+//     placeType: string,
+//     placeExperience: string,
+//     placeRating: Number,
+//     placeImageURL : string
+// }
+
 var newPost = function(event) {
     event.preventDefault();
-    console.log('New Post.');
-    var myEmail = document.querySelector('[name="emailAddress"]');
-    var myCoffee = document.querySelector('[name="coffee"]');
-    var myFlavor = document.querySelector('[name="flavor"]');
-    var myStrength = document.querySelector('[name="strength"]');
-    var mySize = document.querySelector('[name="size"]:checked');
-    var orderInfo = {
-        emailAddress: myEmail.value,
-        coffee: myCoffee.value,
-        flavor: myFlavor.value,
-        strength: myStrength.value,
-        size: mySize.value
+    console.log('New Post. Saving...');
+    var myAuthor = document.querySelector('[name="author"]');
+    var myPlace = document.querySelector('[name="placeName"]');
+    var myRating = document.querySelector('[name="rating"]');
+    var myPlaceType = document.querySelector('[name="placeType"]');
+    var myExperience = document.querySelector('[name="placeExperience"]');
+    var newPostData = {
+        placeName: myPlace.value,
+        author: myAuthor.value,
+        placeType: myPlaceType.value,
+        placeExperience: myExperience.value,
+        placeRating: myRating.value,
+        placeImageURL: "http://sect.net/placeholder.jpg"
         };
-    console.log(orderInfo);
-    saveOrder(orderInfo);
+    console.log(newPostData);
+    savePost(newPostData);
 }
