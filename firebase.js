@@ -27,12 +27,15 @@ var savePost = function(postData) {
   loadPosts();
 }
 
-var loadPosts = function(postData) {
+var loadPosts = function(filter) {
   postList = [];
   console.log('loading saved posts...');
   firebase.database().ref('posts').once('value').then(function(data) {
     console.log(data.val());
     convertToArray(data.val(), postList);
+    if (filter) {
+      postList = postList.filter(post => post.placeType === filter);
+    }
     populatePosts(postList);
   });
 }
