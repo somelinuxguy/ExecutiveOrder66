@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Play with Firebase</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Database FUNctions</h1>
+  <form class="create" action="get">
+    <h2>Create with key: Username</h2>
+    <p>Note: Will overwrite data if usernames are repeated.  Functions as update if username expists.</p>
+    <label>
+      Username: <input type="text" name="user">
+    </label>
+    <label>
+      Comment: <textarea name="comment" cols="30" rows="10"></textarea>
+    </label>
+    <input type="submit">
+  </form>
+  <form class="create-with-id" action="get">
+    <h2>Create with key: Unique ID</h2>
+    <label>
+      Username: <input type="text" name="user">
+    </label>
+    <label>
+      Comment: <textarea name="comment" cols="30" rows="10"></textarea>
+    </label>
+    <input type="submit">
+  </form>
+  <h2>Read Data AND auto-update with new data</h2>
+  <div class='user-data'></div>
+  <form class="update-with-id" action="get">
+    <h2>Update data created with unique ID</h2>
+    <label>
+      Unique ID: <input type="text" name="id">
+    </label>
+    <label>
+      Username: <input type="text" name="user">
+    </label>
+    <label>
+      Comment: <textarea name="comment" cols="30" rows="10"></textarea>
+    </label>
+    <input type="submit">
+  </form>
+  
+  <form class="remove" action="get">
+    <h2>Delete from Database</h2>
+    <label>
+      Username/ID: <input type="text" name="user">
+    </label>
+    <input type="submit">
+  </form>
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-database.js"></script>
+  <script src="key.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
