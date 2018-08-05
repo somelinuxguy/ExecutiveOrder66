@@ -10,6 +10,7 @@ var windowOnClick = function(event) {
 
 var toggleModal = function(event) {
     event.preventDefault();
+    console.log('Toggle form modal.');
     modal.classList.toggle("showmodal");
 }
 

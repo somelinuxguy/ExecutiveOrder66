@@ -17,7 +17,7 @@ body {
 .headertext {
     font-family: "Aguafina Script";
     background-color: rgba(169, 169, 169, 0.651);
-    background-image: url('Images/gem2.png');
+    background-image: url('images/gem2.png');
     background-repeat: no-repeat;
     background-position: center;
     border: 3px solid darkred;
@@ -96,7 +96,7 @@ body {
     padding: 40px;
     width: 90%;
     display: flex;
-    background-image: url('Images/GemBGrough.png');
+    background-image: url('images/GemBGrough.png');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 100%;

@@ -75,7 +75,7 @@ var populatePosts = function(postList) {
 
 var newPost = function(event) {
     event.preventDefault();
-    hideModal;
+    toggleModal(event);
     var handleURL = function(url) {
         console.log('New Post. Saving...');
         var myAuthor = document.querySelector('[name="author"]');
