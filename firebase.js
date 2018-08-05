@@ -21,7 +21,7 @@ var convertToArray = function(data, orderList) {
   console.log(postList);
 }
 
-var savePosts = function(postData) {
+var savePost = function(postData) {
   console.log('saving post: ' + postData.placeName);
   firebase.database().ref('posts').push(postData);
   loadPosts();

@@ -78,8 +78,8 @@ var newPost = function(event) {
     console.log('New Post. Saving...');
     var myAuthor = document.querySelector('[name="author"]');
     var myPlace = document.querySelector('[name="placeName"]');
-    var myRating = document.querySelector('[name="rating"]:checked');
-    var myPlaceType = document.querySelector('[name="placeType"]:checked');
+    var myRating = document.querySelector('[name="rating"]');
+    var myPlaceType = document.querySelector('[name="placeType"]');
     var myExperience = document.querySelector('[name="placeExperience"]');
     var newPostData = {
         placeName: myPlace.value,
@@ -87,7 +87,7 @@ var newPost = function(event) {
         placeType: myPlaceType.value,
         placeExperience: myExperience.value,
         placeRating: myRating.value,
-        placeImageURL: ""
+        placeImageURL: "http://sect.net/placeholder.jpg"
         };
     console.log(newPostData);
     savePost(newPostData);
