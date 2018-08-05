@@ -1,0 +1,10 @@
+html {
+  font-family: sans-serif;
+}
+
+input {
+  display: inline-block;
+}
+label {
+  display: block;
+}
