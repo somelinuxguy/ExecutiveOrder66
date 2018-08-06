@@ -33,9 +33,22 @@ var loadPosts = function(filter) {
   firebase.database().ref('posts').once('value').then(function(data) {
     console.log(data.val());
     convertToArray(data.val(), postList);
+    var filteredPostList;
+    console.log(filter);
     if (filter) {
-      postList = postList.filter(post => post.placeType === filter);
-    }
+      if (filter.hasOwnProperty('placeType')) {
+        if (filter.placeType === "") {
+          populatePosts(postList);
+        } else {
+          var filteredPostList = postList.filter(post => post.placeType === filter.placeType);
+          populatePosts(filteredPostList);
+        }
+      } else if (filter.hasOwnProperty('placeName')) {
+        filteredPostList = postList.filter(post => post.placeName.toLowerCase().includes(filter.placeName.toLowerCase()));
+        populatePosts(filteredPostList);
+      } 
+    } else {
     populatePosts(postList);
+    }
   });
 }
