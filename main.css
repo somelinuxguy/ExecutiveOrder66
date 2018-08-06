@@ -176,6 +176,7 @@ label {
     font-family: Arial;
     font-weight: bolder;
     color: white;
+    visibility: hidden;
 }
 
 .nightmode {
