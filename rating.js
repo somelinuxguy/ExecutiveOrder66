@@ -5,7 +5,7 @@ var gem4 = document.querySelector("[name='gem4']");
 var gem5 = document.querySelector("[name='gem5']");
 var rating = document.querySelector(".ratinglabel")
 
-ratingValue = 0;
+var ratingValue = 0;
 
 
 var rate = function(event) {
