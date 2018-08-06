@@ -165,3 +165,8 @@ label {
     font-size: 16px;
     font-family: 'Lobster', cursive;
 }
+
+.previous, .next {
+    color: white;
+    cursor: pointer;
+}
