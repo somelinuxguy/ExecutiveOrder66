@@ -62,16 +62,27 @@ var populatePosts = function(postList, start, numPosts) {
         postMap.src = getLocation(post.placeName);
         postContainer.appendChild(postMap);
 
+        var postDelete = document.createElement('div');
+        postDelete.classList.add('deletePost');
+        postDelete.textContent = "DEL";
+        postContainer.appendChild(postDelete);
+        var removePostDOM = function(event) {
+            removePost(post);
+        };
+        postDelete.addEventListener('click', removePostDOM);
+
         container.appendChild(postContainer);
     });
 }
 
+//     Just for reference:
 // {   placeName: string,
 //     author: string,
 //     placeType: string,
 //     placeExperience: string,
 //     placeRating: Number,
-//     placeImageURL : string
+//     placeImageURL : string,
+//     postKey: string
 // }
 
 var newPost = function(event) {
