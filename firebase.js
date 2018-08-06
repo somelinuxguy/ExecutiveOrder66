@@ -46,7 +46,7 @@ var loadPosts = function(filter) {
           populatePosts(filteredPostList);
         }
       } else if (filter.hasOwnProperty('placeName')) {
-        filteredPostList = postList.filter(post => post.placeName.toLowerCase().includes(filter.placeName.toLowerCase()));
+        filteredPostList = postList.filter(post => post.placeName.toLowerCase().includes(filter.placeName.toLowerCase()) || post.placeExperience.toLowerCase().includes(filter.placeName.toLowerCase()));
         populatePosts(filteredPostList);
       } 
     } else {
