@@ -38,7 +38,7 @@ previousElement.addEventListener('click', function(){
 })
 var nextElement = document.querySelector('.next');
 nextElement.addEventListener('click', function(){
-  if (startPost <= displayPostTotal - numPosts) {
+ if (startPost < displayPostTotal - numPosts) { 
     var filterObject;
     if (filterElement.value) {
       if (!filterObject) {
@@ -50,12 +50,6 @@ nextElement.addEventListener('click', function(){
       if (!filterObject) {
         filterObject = {};
       }
-      filterObject.placeName = searchBar.value;
-    }
-    if (filterElement.value) {
-      filterObject.placeType = filterElement.value;
-    }
-    if (searchBar.value) {
       filterObject.placeName = searchBar.value;
     }
     startPost += numPosts;
