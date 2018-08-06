@@ -51,7 +51,7 @@ var populatePosts = function(postList, start, numPosts) {
 
         for (var i = 0; i < Number(post.placeRating); i++) {
             var ratingGem = document.createElement('img');
-            ratingGem.setAttribute('src', 'Images/gem.png');
+            ratingGem.setAttribute('src', 'Images/gem3.png');
             ratingGem.classList.add('ratinggem');
             postRating.appendChild(ratingGem);
         }
