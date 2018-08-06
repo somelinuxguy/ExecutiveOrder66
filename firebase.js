@@ -12,10 +12,10 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var postList = [];
 
-var convertToArray = function(data, orderList) {
-  Object.values(data).forEach(function(post) {
-      console.log('Push post to post list: ' + post.placeName)
-      postList.push(post);
+var convertToArray = function(data) {
+  Object.values(data).forEach(function(postFromFB) {
+      console.log('Push post to post list: ' + postFromFB.placeName)
+      postList.push(postFromFB);
   });
   console.log('Converted to array...');
   console.log(postList);
@@ -27,6 +27,12 @@ var savePost = function(postData) {
   postData.postKey = myPostKey;
   firebase.database().ref('posts/' + myPostKey).set(postData);
   loadPosts();
+}
+
+var removePost = function(post) {
+      console.log('Post deleted: ' + post.postKey);
+      firebase.database().ref('posts/' + post.postKey).remove();
+      loadPosts();
 }
 
 var loadPosts = function(filter) {
