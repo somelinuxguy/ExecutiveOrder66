@@ -170,6 +170,7 @@ label {
     font-family: 'Lobster', cursive;
 }
 
+
 .datetime {
     font-size: 16px;
     color: whitesmoke;
@@ -180,4 +181,10 @@ label {
 		1px -1px 0 black,
 		-1px 1px 0 black,
 		1px 1px 0 black;
+}
+
+.deletePost {
+    font-family: Arial;
+    font-weight: bolder;
+    color: white;
 }
