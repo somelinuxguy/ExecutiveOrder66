@@ -169,3 +169,9 @@ label {
     font-size: 16px;
     font-family: 'Lobster', cursive;
 }
+
+.deletePost {
+    font-family: Arial;
+    font-weight: bolder;
+    color: white;
+}
