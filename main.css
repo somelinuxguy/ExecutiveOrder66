@@ -17,7 +17,7 @@ body {
 .headertext {
     font-family: 'Aguafina Script', cursive;
     background-color: rgba(169, 169, 169, 0.651);
-    background-image: url('images/gem2.png');
+    background-image: url('images/gemBGEdit.png');
     background-repeat: no-repeat;
     background-position: center;
     border: 3px solid darkred;
@@ -140,7 +140,6 @@ body {
 
 .ratinggem {
     height: 40px;
-
     padding: 5px;
 }
 
