@@ -3,15 +3,18 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-image: url('Images/BGblack.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     display: flex;
 }
 
 .mainlogo {
     text-align: center;
     height: 200px;
-    margin-top: 25px;
+    margin-top: 0px;
     padding-top: 60px;
+    margin-bottom: 100px;
 }
 
 .headertext {
@@ -95,6 +98,7 @@ body {
 .post {
     padding: 40px;
     width: 90%;
+    opacity: 0.85;
     display: flex;
     background-image: url('images/GemBGrough.png');
     background-repeat: no-repeat;
