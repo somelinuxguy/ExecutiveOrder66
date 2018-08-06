@@ -11,7 +11,6 @@ var populatePosts = function(postList) {
     clearDisplay();
 
     var container = document.querySelector(".postbody");
-    // write the posts in to the new currentOrders div (named container)
     postList.forEach(function(post) {
         var postContainer = document.createElement('div');
         postContainer.classList.add('post');
@@ -58,10 +57,6 @@ var populatePosts = function(postList) {
 
         var postMap = document.createElement('iframe');
         postMap.classList.add('googleIMG');
-        postMap.classList.add('map');
-        postMap.setAttribute('width', '300');
-        postMap.setAttribute('height', '300');
-        postMap.setAttribute('frameborder', '0');
         postMap.setAttribute('allowfullscreen', true);
         postMap.src = getLocation(post.placeName);
         postContainer.appendChild(postMap);
@@ -69,14 +64,6 @@ var populatePosts = function(postList) {
         container.appendChild(postContainer);
     });
 }
-
-// {   placeName: string,
-//     author: string,
-//     placeType: string,
-//     placeExperience: string,
-//     placeRating: Number,
-//     placeImageURL : string
-// }
 
 var newPost = function(event) {
     event.preventDefault();
