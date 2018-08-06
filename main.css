@@ -170,6 +170,10 @@ label {
     font-family: 'Lobster', cursive;
 }
 
+.previous, .next {
+    color: white;
+    cursor: pointer;
+}
 .deletePost {
     font-family: Arial;
     font-weight: bolder;

@@ -35,28 +35,31 @@ var removePost = function(post) {
       loadPosts();
 }
 
-var loadPosts = function(filter) {
+var loadPosts = function(filter, startPost = 0, numPosts = 5) {
   postList = [];
   console.log('loading saved posts...');
   firebase.database().ref('posts').once('value').then(function(data) {
     console.log(data.val());
     convertToArray(data.val(), postList);
+    displayPostTotal = postList.length;
     var filteredPostList;
     console.log(filter);
     if (filter) {
       if (filter.hasOwnProperty('placeType')) {
         if (filter.placeType === "") {
-          populatePosts(postList);
+          populatePosts(postList, startPost, numPosts);
         } else {
           var filteredPostList = postList.filter(post => post.placeType === filter.placeType);
-          populatePosts(filteredPostList);
+          populatePosts(filteredPostList, startPost, numPosts);
+          displayPostTotal = filteredPostList.length;
         }
       } else if (filter.hasOwnProperty('placeName')) {
         filteredPostList = postList.filter(post => post.placeName.toLowerCase().includes(filter.placeName.toLowerCase()) || post.placeExperience.toLowerCase().includes(filter.placeName.toLowerCase()));
-        populatePosts(filteredPostList);
+        populatePosts(filteredPostList, startPost, numPosts);
+        displayPostTotal = filteredPostList.length;
       } 
     } else {
-    populatePosts(postList);
+    populatePosts(postList, startPost, numPosts);
     }
   });
 }

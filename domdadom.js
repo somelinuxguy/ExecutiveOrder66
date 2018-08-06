@@ -6,13 +6,14 @@ var clearDisplay = function() {
     }
 }
 
-var populatePosts = function(postList) {
+var populatePosts = function(postList, start, numPosts) {
     console.log(postList);
     clearDisplay();
+    postListFirstFive = postList.slice(start, start + numPosts);
 
     var container = document.querySelector(".postbody");
     // write the posts in to the new currentOrders div (named container)
-    postList.forEach(function(post) {
+    postListFirstFive.forEach(function(post) {
         var postContainer = document.createElement('div');
         postContainer.classList.add('post');
 
