@@ -87,7 +87,7 @@ var newPost = function(event) {
             author: myAuthor.value,
             placeType: myPlaceType.value,
             placeExperience: myExperience.value,
-            placeRating: myRating.value,
+            placeRating: ratingValue,
             placeImageURL: url
             };
         console.log(newPostData);
