@@ -15,7 +15,7 @@ body {
 }
 
 .headertext {
-    font-family: "Aguafina Script";
+    font-family: 'Aguafina Script', cursive;
     background-color: rgba(169, 169, 169, 0.651);
     background-image: url('images/gem2.png');
     background-repeat: no-repeat;
@@ -66,7 +66,7 @@ body {
     height: 50px;
     font-size: 16px;
     width: 150px;
-    font-family: Lobster;
+    font-family: 'Lobster', cursive;
     margin-right: 5px;
     background-color: crimson;
     border: 3px solid darkred;
@@ -108,7 +108,7 @@ body {
 .location {
     font-size: 32px;
     padding-top: 20px;
-    font-family: Lobster;
+    font-family: 'Lobster', cursive;
     text-shadow:
 		-1px -1px 0 white,
 		1px -1px 0 white,
@@ -118,7 +118,7 @@ body {
 
 .author {
     font-size: 20px;
-    font-family: Lobster;
+    font-family: 'Lobster', cursive;
     text-shadow:
 		-1px -1px 0 white,
 		1px -1px 0 white,
@@ -131,8 +131,7 @@ body {
     font-size: 16px;
     padding-left: 15px;
     padding-right: 15px;
-    font-family: Lobster;
-
+    font-family: 'Lobster', cursive;
     background: rgba(245, 245, 245, 0.8);
     border-radius: 15px;
     padding: 10px;
@@ -165,5 +164,5 @@ body {
 
 label {
     font-size: 16px;
-    font-family: Lobster;
+    font-family: 'Lobster', cursive;
 }
