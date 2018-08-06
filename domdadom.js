@@ -87,7 +87,7 @@ var newPost = function(event) {
         var myRating = document.querySelector('[name="rating"]');
         var myPlaceType = document.querySelector('[name="placeType"]');
         var myExperience = document.querySelector('[name="placeExperience"]');
-        var timestamp = String(new Date());
+        var timestamp = new Date();
         var newPostData = {
             placeName: myPlace.value,
             author: myAuthor.value,
@@ -95,7 +95,7 @@ var newPost = function(event) {
             placeExperience: myExperience.value,
             placeRating: ratingValue,
             placeImageURL: url,
-            dateTime: timestamp
+            dateTime: timestamp.toDateString()
             };
         console.log(newPostData);
         savePost(newPostData);
