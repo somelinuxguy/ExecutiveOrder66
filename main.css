@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('Images/BGblack.jpg');
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: 100% 100%;
     display: flex;
 }
@@ -170,10 +170,23 @@ label {
     font-family: 'Lobster', cursive;
 }
 
+.datetime {
+    font-size: 16px;
+    color: whitesmoke;
+    font-family: 'Lobster', cursive;
+    margin-bottom: 20px;
+    text-shadow:
+		-1px -1px 0 black,
+		1px -1px 0 black,
+		-1px 1px 0 black,
+		1px 1px 0 black;
+}
+
 .previous, .next {
     color: white;
     cursor: pointer;
 }
+
 .deletePost {
     font-family: Arial;
     font-weight: bolder;

@@ -12,7 +12,6 @@ var populatePosts = function(postList, start, numPosts) {
     postListFirstFive = postList.slice(start, start + numPosts);
 
     var container = document.querySelector(".postbody");
-    // write the posts in to the new currentOrders div (named container)
     postListFirstFive.forEach(function(post) {
         var postContainer = document.createElement('div');
         postContainer.classList.add('post');
@@ -45,6 +44,11 @@ var populatePosts = function(postList, start, numPosts) {
         postRating.classList.add('rating');
         postText.appendChild(postRating);
 
+        var postTime = document.createElement('div');
+        postTime.classList.add('datetime');
+        postTime.textContent = post.dateTime;
+        postText.appendChild(postTime);
+
         for (var i = 0; i < Number(post.placeRating); i++) {
             var ratingGem = document.createElement('img');
             ratingGem.setAttribute('src', 'Images/gem.png');
@@ -54,10 +58,6 @@ var populatePosts = function(postList, start, numPosts) {
 
         var postMap = document.createElement('iframe');
         postMap.classList.add('googleIMG');
-        postMap.classList.add('map');
-        postMap.setAttribute('width', '300');
-        postMap.setAttribute('height', '300');
-        postMap.setAttribute('frameborder', '0');
         postMap.setAttribute('allowfullscreen', true);
         postMap.src = getLocation(post.placeName);
         postContainer.appendChild(postMap);
@@ -74,6 +74,7 @@ var populatePosts = function(postList, start, numPosts) {
         container.appendChild(postContainer);
     });
 }
+
 
 //     Just for reference:
 // {   placeName: string,
@@ -94,13 +95,15 @@ var newPost = function(event) {
         var myRating = document.querySelector('[name="rating"]');
         var myPlaceType = document.querySelector('[name="placeType"]');
         var myExperience = document.querySelector('[name="placeExperience"]');
+        var timestamp = new Date();
         var newPostData = {
             placeName: myPlace.value,
             author: myAuthor.value,
             placeType: myPlaceType.value,
             placeExperience: myExperience.value,
             placeRating: ratingValue,
-            placeImageURL: url
+            placeImageURL: url,
+            dateTime: timestamp.toDateString()
             };
         console.log(newPostData);
         savePost(newPostData);
