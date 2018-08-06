@@ -63,12 +63,14 @@ nextElement.addEventListener('click', function(){
   }
 })
 
-var nightButton = document.querySelector('.nightmode');
-var body = document.querySelector('.mainbody');
-var logo = document.querySelector('.logo');
+
+var nightMode = function() {
+  var nightButton = document.querySelector('.nightmode');
+  var body = document.querySelector('.mainbody');
+  var logo = document.querySelector('.logo');
 
 
-var changeBG = function(event) {
+  var changeBG = function(event) {
   body.classList.add('daytimebody');
   logo.setAttribute('src', 'images/DaytimeLogo.png');
 
@@ -76,3 +78,5 @@ var changeBG = function(event) {
 }
 
 nightButton.addEventListener('click', changeBG);
+
+}();
