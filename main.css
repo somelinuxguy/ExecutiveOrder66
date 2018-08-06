@@ -1,12 +1,15 @@
-body {
+.mainbody {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-image: url('Images/BGblack.jpg');
-    background-repeat: repeat-y;
-    background-size: 100% 100%;
+    background-image: url('Images/BGblack2.jpg');
+    background-repeat: repeat;
     display: flex;
+}
+
+.daytimebody {
+    background-image: url('Images/WhiteBG2.png');
 }
 
 .mainlogo {
@@ -15,25 +18,6 @@ body {
     margin-top: 0px;
     padding-top: 60px;
     margin-bottom: 100px;
-}
-
-.headertext {
-    font-family: 'Aguafina Script', cursive;
-    background-color: rgba(169, 169, 169, 0.651);
-    background-image: url('images/gemBGEdit.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    border: 3px solid darkred;
-    border-radius: 25px;
-    padding: 50px;
-    font-size: 82px;
-    color: whitesmoke;
-    margin-top: 50px;
-    text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
 }
 
 .mainflex {
@@ -48,8 +32,8 @@ body {
     width: 40%;
     height: 30px;
     text-align: right;
-    border: 1px transparent black;
-    border-radius: 3px;
+    border-style: none;
+    border-radius: 1px;
     padding-right: 15px;
 }
 
@@ -71,8 +55,8 @@ body {
     width: 150px;
     font-family: 'Lobster', cursive;
     margin-right: 5px;
-    background-color: crimson;
-    border: 3px solid darkred;
+    background: linear-gradient(to bottom, #a90329 0%,#8f0222 46%,#6d0019 100%);
+    border: 3px solid black;
     border-radius: 5px;
     transition: ease;
 }
@@ -80,6 +64,7 @@ body {
 .buttonclass:hover {
     font-size: 18px;
     color: whitesmoke;
+    border: 3px solid whitesmoke;
     transition: ease;
 }
 
@@ -96,13 +81,13 @@ body {
     align-items: center;
 }
 .post {
-    padding: 40px;
+    padding: 10px;
     width: 90%;
-    opacity: 0.85;
     display: flex;
-    background-image: url('images/GemBGrough.png');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    opacity: .90;
+    margin: 20px;
+    background: linear-gradient(to bottom, #a90329 0%,#8f0222 46%,#6d0019 100%);
+    border: 10px solid whitesmoke;
     height: 100%;
     background-origin: unset;
     border-radius: 10px;
@@ -150,7 +135,7 @@ body {
 .posttext {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-basis: 45%;
 }
 
@@ -192,4 +177,10 @@ label {
     font-weight: bolder;
     color: white;
     visibility: hidden;
+}
+
+.nightmode {
+    color: blue;
+    border: 2px solid red;
+    height: 10%;
 }

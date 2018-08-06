@@ -56,3 +56,14 @@ nextElement.addEventListener('click', function(){
     loadPosts(filterObject, startPost, numPosts);
   }
 })
+
+var nightButton = document.querySelector('.nightmode');
+var body = document.querySelector('.mainbody');
+
+
+var changeBG = function(event) {
+  body.classList.add('daytimebody');
+  console.log("SWITCHMODE!")
+}
+
+nightButton.addEventListener('click', changeBG);
