@@ -19,6 +19,10 @@
     margin-bottom: 100px;
 }
 
+.logo {
+    max-width: 100%;
+}
+
 .mainflex {
     display: flex;
     flex-direction: column;
