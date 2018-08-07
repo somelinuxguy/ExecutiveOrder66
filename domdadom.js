@@ -111,3 +111,5 @@ var newPost = function(event) {
     var myPlace = document.querySelector('[name="placeName"]');
     getImgSrc(myPlace.value, handleURL);
 }
+
+
