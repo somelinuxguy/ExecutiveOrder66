@@ -5,6 +5,7 @@
     padding: 0;
     background-image: url('Images/BGblack2.jpg');
     background-repeat: repeat;
+    text-align: center;
 }
 
 .daytimebody {
@@ -222,7 +223,8 @@ label {
 
 .loginmodal {
     display: flex;
-    border: 1px solid black;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .nightmode {
@@ -239,7 +241,7 @@ label {
 
 .nav-buttons {
     text-align: right;
-    margin-right: 80px;
+    margin-right: 90px;
 }
 
 .nextprev {
