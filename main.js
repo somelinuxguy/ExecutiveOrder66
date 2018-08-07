@@ -63,10 +63,18 @@ var nightMode = function() {
   var logo = document.querySelector('.logo');
   var btns = document.querySelectorAll('.buttonclass');
   var posts = document.querySelectorAll('.post, .daytimePosts');
-  console.log(posts);
   var search = document.querySelector('.searchbar');
+  var modeBtn = document.querySelector('.nightmode');
+  var modeIcon = document.querySelector('.colormodeicon');
 
   var whichLogo = logo.getAttribute('src');
+  var whichBtn =  modeIcon.getAttribute('src');
+
+  if (whichBtn === 'images/daymode.png') {
+    modeIcon.setAttribute('src', 'images/nightmode.png');
+  } else {
+    modeIcon.setAttribute('src', 'images/daymode.png');
+  }
 
   if (whichLogo === 'images/DaytimeLogo.png') {
     logo.setAttribute('src', 'images/gemBGwText.png');

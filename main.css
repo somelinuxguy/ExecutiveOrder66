@@ -5,7 +5,6 @@
     padding: 0;
     background-image: url('Images/BGblack2.jpg');
     background-repeat: repeat;
-    display: flex;
 }
 
 .daytimebody {
@@ -217,9 +216,15 @@ label {
 }
 
 .nightmode {
-    color: blue;
-    border: 2px solid red;
-    height: 10%;
+    background-color: rgba(245, 245, 245, 0.758);
+    border: 2px solid #383737;
+    position: fixed;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.nightmode:focus {
+    outline: none;
 }
 
 .nav-buttons {
@@ -234,5 +239,8 @@ label {
     height: 30px;
 }
 
+.colormodeicon {
+    height: 50px;
+}
 
 
