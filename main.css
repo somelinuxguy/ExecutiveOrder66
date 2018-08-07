@@ -103,6 +103,7 @@
     padding: 10px;
     width: 90%;
     display: flex;
+    flex-direction: column;
     opacity: .90;
     margin: 5%;
     background: linear-gradient(to bottom, #a90329 0%,#8f0222 46%,#6d0019 100%);
@@ -170,16 +171,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 45%;
 }
 
 .googleIMG {
     height: 250px;
-    max-width: 250px; 
-    width: 20%;
-    margin: 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    width: 250px;
+    padding: 30px;
+    margin: 0 auto;
     border: 2px solid black;
     border-radius: 15px;
 }
@@ -209,7 +207,7 @@ label {
     font-family: Arial;
     font-weight: bolder;
     color: white;
-    visibility: hidden;
+    display: none;
 }
 
 .hide {
@@ -248,4 +246,25 @@ label {
 
 .colormodeicon {
     height: 50px;
+}
+
+@media (min-width: 768px) {
+    .post {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .posttext {
+        order: 1;
+        flex: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .post {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .posttext {
+        order: 0;
+    }
 }
