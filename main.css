@@ -14,9 +14,9 @@
 .mainlogo {
     text-align: center;
     height: 200px;
-    margin-top: 0px;
+    margin-top: 8%;
     padding-top: 60px;
-    margin-bottom: 100px;
+    margin-bottom: 5%;
 }
 
 .logo {
@@ -36,8 +36,9 @@
     height: 30px;
     text-align: right;
     border-style: none;
-    border-radius: 1px;
-    padding-right: 15px;
+    border-radius: 2px;
+    padding-right: 5px;
+    border: 2px solid #383737;
 }
 
 .daytimeSearch {
@@ -139,6 +140,7 @@
 
 .location {
     font-size: 32px;
+    margin: 10px;
     padding-top: 20px;
     font-family: 'Lobster', cursive;
     text-shadow:
@@ -150,6 +152,7 @@
 
 .author {
     font-size: 20px;
+    margin: 10px;
     font-family: 'Lobster', cursive;
     text-shadow:
 		-1px -1px 0 white,
@@ -159,6 +162,7 @@
 }
 
 .postcontent {
+    margin: 10px;
     padding-top: 10px;
     word-break: break-all;
     font-size: 16px;
@@ -172,6 +176,8 @@
 }
 
 .ratinggem {
+    margin-top: 10px;
+    margin-bottom: 10px;
     height: 40px;
     padding: 5px;
 }
@@ -201,6 +207,7 @@ label {
 
 .datetime {
     font-size: 16px;
+    margin: 10px;
     color: whitesmoke;
     font-family: 'Lobster', cursive;
     margin-bottom: 20px;
@@ -230,12 +237,13 @@ label {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 80px;
+    margin-right: 10px;
 }
 
 .nightmode {
     background-color: rgba(245, 245, 245, 0.758);
     border: 2px solid #383737;
+    margin-top: 5px;
     position: fixed;
     border-radius: 3px;
     z-index: 1;
@@ -294,14 +302,22 @@ label {
  .loginbox {
     padding: 5px;
     padding-left: 2px;
-    justify-content: space-between;
-    margin-top: 20px;
-    width: 380px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    width: relative;
     position: fixed;
     background-color: rgba(245, 245, 245, 0.758);
     border: 1px solid #383737;
     border-radius: 5px;
-    display: block;
+    display: flex;
     z-index: 1;
+}
+
+.loginbasis {
+    text-align: right;
+    flex-basis: 100%
 }
 
