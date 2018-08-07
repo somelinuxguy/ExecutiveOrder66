@@ -88,9 +88,9 @@ var populatePosts = function(postList, start, numPosts) {
 // }
 
 var newPost = function(event) {
+    event.preventDefault();
     var firebaseuser = firebase.auth().currentUser;
     if (firebaseuser) {
-        event.preventDefault();
         toggleModal(event);
         var handleURL = function(url) {
             console.log('New Post. Saving...');
