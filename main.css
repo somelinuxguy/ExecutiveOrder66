@@ -212,6 +212,15 @@ label {
     visibility: hidden;
 }
 
+.hide {
+    visibility: hidden;
+}
+
+.loginmodal {
+    display: flex;
+    border: 1px solid black;
+}
+
 .nightmode {
     display: block;
     background-color: rgba(245, 245, 245, 0.758);
@@ -240,5 +249,3 @@ label {
 .colormodeicon {
     height: 50px;
 }
-
-
