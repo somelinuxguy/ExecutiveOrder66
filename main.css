@@ -193,3 +193,12 @@ label {
     color: white;
     visibility: hidden;
 }
+
+.hide {
+    /* visibility: hidden; */
+}
+
+.loginmodal {
+    display: flex;
+    border: 1px solid black;
+}
