@@ -13,10 +13,10 @@
 
 .mainlogo {
     text-align: center;
-    padding: 10% 5% 15% 5%;
-}
-.logo {
-    max-width: 100%;
+    height: 200px;
+    margin-top: 0px;
+    padding-top: 60px;
+    margin-bottom: 100px;
 }
 
 .mainflex {
@@ -97,15 +97,19 @@
 
 .postbody {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 .post {
-    box-sizing: border-box;
     padding: 10px;
     width: 90%;
     display: flex;
     flex-direction: column;
     opacity: .90;
-    margin: 5%;
+    margin: 20px;
     background: linear-gradient(to bottom, #a90329 0%,#8f0222 46%,#6d0019 100%);
     border: 10px solid whitesmoke;
     height: 100%;
@@ -220,11 +224,11 @@ label {
 
 .loginmodal {
     display: flex;
-    border: 1px solid black;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .nightmode {
-    display: block;
     background-color: rgba(245, 245, 245, 0.758);
     border: 2px solid #383737;
     position: fixed;
@@ -238,7 +242,7 @@ label {
 
 .nav-buttons {
     text-align: right;
-    margin-right: 80px;
+    margin-right: 90px;
 }
 
 .nextprev {
@@ -246,6 +250,7 @@ label {
     width: 70px;
     margin-right: 0;
     height: 30px;
+    margin-right: 5px;
 }
 
 .colormodeicon {
@@ -275,3 +280,23 @@ label {
         flex: initial;
     }
 }
+
+.loginInput {
+    height: 25px;
+    width: 80px;
+    margin: 5px;
+}
+ .loginbox {
+    width: 25%;
+    margin-top: 20px;
+    padding: 5px;
+    padding-left: 2px;
+    justify-content: space-between;
+    background-color: rgba(245, 245, 245, 0.758);
+    border: 1px solid #383737;
+    border-radius: 5px;
+    position: fixed;
+    display: block;
+    z-index: 1;
+}
+

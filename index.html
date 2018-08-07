@@ -16,6 +16,15 @@
     <button class="nightmode">
         <img class="colormodeicon" src="Images/nightmode.png">
     </button>
+    <div class="loginmodal">
+        <div class="loginmodal loginbox">
+            <input id="txtEmail" type="email" placeholder="Your Email" class="loginInput searchbar">
+            <input id="txtPassword" type="password" placeholder="password" class="loginInput searchbar">
+            <button id="btnLogin" class="buttonclass nextprev">Log In</button>
+            <button id="btnLogout" class="buttonclass nextprev hide">Log Out</button>
+            <button id="btnSignUp" class="buttonclass nextprev">Sign Up</button>
+        </div>
+    </div>
     <div class="mainflex">
             <div class="modaloutter">
                     <div class="modalcontent">
@@ -57,20 +66,11 @@
                     </div>
                 </div>
 
-                <!-- <div class="loginmodal hide"> -->
-                <div class="loginmodal">
-                    <input id="txtEmail" type="email" placeholder="Your Email">
-                    <input id="txtPassword" type="password" placeholder="password">
-                    <button id="btnLogin" class="buttonclass">Log In</button>
-                    <button id="btnSignUp" class="buttonclass">Sign Up</button>
-                    <button id="btnLogout" class="buttonclass hide">Log Out</button>
-                </div>
-
         <div class="mainlogo">
             <img class="logo" src="Images/gemBGwText.png">
         </div>
         <div class="searchfunction">
-            <input class="searchbar" type="text" placeholder="Search Gems by Keyword">
+            <input name="searchInput" class="searchbar" type="text" placeholder="Search Gems by Keyword">
         </div>
         <div class="buttons">
             <button name="submit" class="buttonclass" type="button" value="Post">Post New Gem</button>

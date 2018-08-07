@@ -12,7 +12,7 @@ filterElement.addEventListener('change', function(event) {
   loadPosts({placeType: event.currentTarget.value});
 })
 
-var searchBar = document.querySelector('.searchbar')
+var searchBar = document.querySelector("[name='searchInput'")
 searchBar.addEventListener('input', function(event) {
   loadPosts({placeName: event.currentTarget.value});
 });
@@ -68,7 +68,7 @@ var nightMode = function() {
   var logo = document.querySelector('.logo');
   var btns = document.querySelectorAll('.buttonclass');
   var posts = document.querySelectorAll('.post, .daytimePosts');
-  var search = document.querySelector('.searchbar');
+  var textinputs = document.querySelectorAll('.searchbar');
   var modeBtn = document.querySelector('.nightmode');
   var modeIcon = document.querySelector('.colormodeicon');
 
@@ -88,10 +88,12 @@ var nightMode = function() {
   }
 
   body.classList.toggle('daytimebody');
-  search.classList.toggle('daytimeSearch');
+
+  textinputs.forEach(function(tbox) {
+    tbox.classList.toggle('daytimeSearch');
+  });
 
   posts.forEach(function(item) {
-
     item.classList.toggle('post');
     item.classList.toggle('daytimePosts');
     console.log(item);
