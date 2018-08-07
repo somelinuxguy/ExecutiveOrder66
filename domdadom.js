@@ -88,6 +88,8 @@ var populatePosts = function(postList, start, numPosts) {
 // }
 
 var newPost = function(event) {
+    var firebaseuser = firebase.auth().currentUser;
+    console.log(firebaseuser);
     if (firebaseuser) {
     event.preventDefault();
     toggleModal(event);
