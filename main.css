@@ -13,10 +13,10 @@
 
 .mainlogo {
     text-align: center;
-    padding: 10% 5% 15% 5%;
-}
-.logo {
-    max-width: 100%;
+    height: 200px;
+    margin-top: 0px;
+    padding-top: 60px;
+    margin-bottom: 100px;
 }
 
 .mainflex {
@@ -97,14 +97,18 @@
 
 .postbody {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 .post {
-    box-sizing: border-box;
     padding: 10px;
     width: 90%;
     display: flex;
     opacity: .90;
-    margin: 5%;
+    margin: 20px;
     background: linear-gradient(to bottom, #a90329 0%,#8f0222 46%,#6d0019 100%);
     border: 10px solid whitesmoke;
     height: 100%;
@@ -170,13 +174,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 45%;
+    flex-basis: 45%;
 }
 
 .googleIMG {
     height: 250px;
-    max-width: 250px; 
-    width: 20%;
+    width: 250px; 
+    flex-basis: 20%;
     margin: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -222,7 +226,6 @@ label {
 }
 
 .nightmode {
-    display: block;
     background-color: rgba(245, 245, 245, 0.758);
     border: 2px solid #383737;
     position: fixed;
