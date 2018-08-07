@@ -43,6 +43,6 @@ if (firebaseuser) {
     console.log('See ya later...');
     btnLogout.classList.add('hide');
     btnPostSubmit.classList.add('hide');
-}
-
+    btnSignUp.classList.remove('hide');
+    }
 });
