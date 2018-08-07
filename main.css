@@ -112,6 +112,7 @@
     background-origin: unset;
     border-radius: 10px;
     justify-content: space-around;
+    align-items: center;
 }
 
 .daytimePosts {
@@ -169,6 +170,8 @@
 
 .posttext {
     display: flex;
+    width: 90%;
+    margin: 0 5%;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -176,8 +179,7 @@
 .googleIMG {
     height: 250px;
     width: 250px;
-    padding: 30px;
-    margin: 0 auto;
+    margin: 30px;
     border: 2px solid black;
     border-radius: 15px;
 }
@@ -256,6 +258,7 @@ label {
     .posttext {
         order: 1;
         flex: 1;
+        flex-basis: 100%;
     }
 }
 
@@ -266,5 +269,6 @@ label {
     }
     .posttext {
         order: 0;
+        flex-basis: auto;
     }
 }
