@@ -183,6 +183,7 @@
     border: 2px solid black;
     border-radius: 15px;
     overflow: hidden;
+    flex: none;
 }
 
 label {
@@ -267,9 +268,10 @@ label {
     .post {
         flex-direction: row;
         flex-wrap: nowrap;
+        align-items: flex-start;
     }
     .posttext {
         order: 0;
-        flex-basis: auto;
+        flex: initial;
     }
 }
