@@ -5,7 +5,6 @@
     padding: 0;
     background-image: url('Images/BGblack2.jpg');
     background-repeat: repeat;
-    text-align: center;
 }
 
 .daytimebody {
@@ -249,8 +248,28 @@ label {
     width: 70px;
     margin-right: 0;
     height: 30px;
+    margin-right: 5px;
 }
 
 .colormodeicon {
     height: 50px;
+}
+
+.loginInput {
+    height: 25px;
+    width: 80px;
+    margin: 5px;
+}
+ .loginbox {
+    width: 25%;
+    margin-top: 20px;
+    padding: 5px;
+    padding-left: 2px;
+    justify-content: space-between;
+    background-color: rgba(245, 245, 245, 0.758);
+    border: 1px solid #383737;
+    border-radius: 5px;
+    position: fixed;
+    display: block;
+    z-index: 1;
 }

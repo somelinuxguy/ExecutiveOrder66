@@ -12,7 +12,7 @@ filterElement.addEventListener('change', function(event) {
   loadPosts({placeType: event.currentTarget.value});
 })
 
-var searchBar = document.querySelector('.searchbar')
+var searchBar = document.querySelector("[name='searchInput'")
 searchBar.addEventListener('input', function(event) {
   loadPosts({placeName: event.currentTarget.value});
 });
@@ -88,7 +88,7 @@ var nightMode = function() {
   }
 
   body.classList.toggle('daytimebody');
-  
+
   textinputs.forEach(function(tbox) {
     tbox.classList.toggle('daytimeSearch');
   });
