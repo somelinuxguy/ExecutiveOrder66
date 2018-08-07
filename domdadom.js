@@ -89,27 +89,31 @@ var populatePosts = function(postList, start, numPosts) {
 
 var newPost = function(event) {
     event.preventDefault();
-    toggleModal(event);
-    var handleURL = function(url) {
-        console.log('New Post. Saving...');
-        var myAuthor = document.querySelector('[name="author"]');
-        var myPlaceType = document.querySelector('[name="placeType"]');
-        var myExperience = document.querySelector('[name="placeExperience"]');
-        var timestamp = Date.now();
-        var newPostData = {
-            placeName: myPlace.value,
-            author: myAuthor.value,
-            placeType: myPlaceType.value,
-            placeExperience: myExperience.value,
-            placeRating: ratingValue,
-            placeImageURL: url,
-            dateTime: timestamp
+    var firebaseuser = firebase.auth().currentUser;
+    if (firebaseuser) {
+        toggleModal(event);
+        var handleURL = function(url) {
+            console.log('New Post. Saving...');
+            var myAuthor = document.querySelector('[name="author"]');
+            var myPlaceType = document.querySelector('[name="placeType"]');
+            var myExperience = document.querySelector('[name="placeExperience"]');
+            var timestamp = Date.now();
+            var newPostData = {
+                placeName: myPlace.value,
+                placeOwner: firebaseuser.uid,
+                author: myAuthor.value,
+                placeType: myPlaceType.value,
+                placeExperience: myExperience.value,
+                placeRating: ratingValue,
+                placeImageURL: url,
+                dateTime: timestamp
+                };
+            console.log(newPostData);
+            savePost(newPostData);
             };
-        console.log(newPostData);
-        savePost(newPostData);
-    };
-    var myPlace = document.querySelector('[name="placeName"]');
-    getImgSrc(myPlace.value, handleURL);
+        var myPlace = document.querySelector('[name="placeName"]');
+        getImgSrc(myPlace.value, handleURL);
+    } else {
+        console.log('Sorry. You arent logged in.');
+    }
 }
-
-
