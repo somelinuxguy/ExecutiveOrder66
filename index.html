@@ -12,8 +12,10 @@
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
     
 </head>
-<body>
-    
+<body class="mainbody">
+    <button class="nightmode">
+        <img class="colormodeicon" src="Images/nightmode.png">
+    </button>
     <div class="mainflex">
             <div class="modaloutter">
                     <div class="modalcontent">
@@ -65,7 +67,7 @@
                 </div>
 
         <div class="mainlogo">
-            <img src="Images/gemBGwText.png">
+            <img class="logo" src="Images/gemBGwText.png">
         </div>
         <div class="searchfunction">
             <input class="searchbar" type="text" placeholder="Search Gems by Keyword">
@@ -81,8 +83,8 @@
             </select>
         </div>
         <div class="nav-buttons">
-            <div class="previous">Previous</div>
-            <div class="next">Next</div>
+            <button class="previous buttonclass nextprev">Previous</button>
+            <button class="next buttonclass nextprev">Next</button>
         </div>
         <div class="postbody">
             <div class="post">
@@ -106,9 +108,13 @@
                 <img class="googleIMG" src="images/Mapsample.jpg">
                 <div class="deletePost">DEL</div>
             </div>
+            
+        </div>
+        <div class="nav-buttons">
+            <button class="previous buttonclass nextprev">Previous</button>
+            <button class="next buttonclass nextprev">Next</button>
         </div>
     </div>
-
     <script src="rating.js"></script>
     <script src="keys.js"></script>
     <script src="google.js"></script>

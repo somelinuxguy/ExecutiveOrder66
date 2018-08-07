@@ -46,12 +46,13 @@ var populatePosts = function(postList, start, numPosts) {
 
         var postTime = document.createElement('div');
         postTime.classList.add('datetime');
-        postTime.textContent = post.dateTime;
+        var dateTime = new Date(post.dateTime);
+        postTime.textContent = dateTime.toLocaleString();
         postText.appendChild(postTime);
 
         for (var i = 0; i < Number(post.placeRating); i++) {
             var ratingGem = document.createElement('img');
-            ratingGem.setAttribute('src', 'Images/gem.png');
+            ratingGem.setAttribute('src', 'Images/gem3.png');
             ratingGem.classList.add('ratinggem');
             postRating.appendChild(ratingGem);
         }
@@ -92,10 +93,9 @@ var newPost = function(event) {
     var handleURL = function(url) {
         console.log('New Post. Saving...');
         var myAuthor = document.querySelector('[name="author"]');
-        var myRating = document.querySelector('[name="rating"]');
         var myPlaceType = document.querySelector('[name="placeType"]');
         var myExperience = document.querySelector('[name="placeExperience"]');
-        var timestamp = new Date();
+        var timestamp = Date.now();
         var newPostData = {
             placeName: myPlace.value,
             author: myAuthor.value,
@@ -103,7 +103,7 @@ var newPost = function(event) {
             placeExperience: myExperience.value,
             placeRating: ratingValue,
             placeImageURL: url,
-            dateTime: timestamp.toDateString()
+            dateTime: timestamp
             };
         console.log(newPostData);
         savePost(newPostData);
@@ -111,3 +111,5 @@ var newPost = function(event) {
     var myPlace = document.querySelector('[name="placeName"]');
     getImgSrc(myPlace.value, handleURL);
 }
+
+
