@@ -219,13 +219,14 @@ label {
 }
 
 .hide {
-    visibility: hidden;
+    display: none;
 }
 
 .loginmodal {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-right: 80px;
 }
 
 .nightmode {
@@ -250,7 +251,7 @@ label {
     width: 70px;
     margin-right: 0;
     height: 30px;
-    margin-right: 5px;
+    margin-right:0;
 }
 
 .colormodeicon {
@@ -287,15 +288,15 @@ label {
     margin: 5px;
 }
  .loginbox {
-    width: 25%;
-    margin-top: 20px;
     padding: 5px;
     padding-left: 2px;
     justify-content: space-between;
+    margin-top: 20px;
+    width: 380px;
+    position: fixed;
     background-color: rgba(245, 245, 245, 0.758);
     border: 1px solid #383737;
     border-radius: 5px;
-    position: fixed;
     display: block;
     z-index: 1;
 }
