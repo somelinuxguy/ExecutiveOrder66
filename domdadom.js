@@ -88,6 +88,7 @@ var populatePosts = function(postList, start, numPosts) {
 // }
 
 var newPost = function(event) {
+    if (firebaseuser) {
     event.preventDefault();
     toggleModal(event);
     var handleURL = function(url) {
@@ -98,6 +99,7 @@ var newPost = function(event) {
         var timestamp = Date.now();
         var newPostData = {
             placeName: myPlace.value,
+            placeOwner: firebaseuser.uid,
             author: myAuthor.value,
             placeType: myPlaceType.value,
             placeExperience: myExperience.value,
@@ -110,6 +112,7 @@ var newPost = function(event) {
     };
     var myPlace = document.querySelector('[name="placeName"]');
     getImgSrc(myPlace.value, handleURL);
+    } else {
+        console.log('Sorry. You arent logged in.');
+    }
 }
-
-
