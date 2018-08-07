@@ -15,7 +15,7 @@ var toggleModal = function(event) {
 }
 
 var modal = document.querySelector('.modaloutter')
-var submit = document.querySelector(".buttonclass")
+var submit = document.querySelector("[name='submit']")
 var closeButton = document.querySelector(".closebutton")
 
 submit.addEventListener('click', toggleModal);
