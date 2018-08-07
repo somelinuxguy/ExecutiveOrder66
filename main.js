@@ -59,18 +59,37 @@ nextElement.addEventListener('click', function(){
 
 
 var nightMode = function() {
-  var nightButton = document.querySelector('.nightmode');
   var body = document.querySelector('.mainbody');
   var logo = document.querySelector('.logo');
+  var btns = document.querySelectorAll('.buttonclass');
+  var posts = document.querySelectorAll('.post, .daytimePosts');
+  console.log(posts);
+  var search = document.querySelector('.searchbar');
 
+  var whichLogo = logo.getAttribute('src');
 
-  var changeBG = function(event) {
-  body.classList.add('daytimebody');
-  logo.setAttribute('src', 'images/DaytimeLogo.png');
+  if (whichLogo === 'images/DaytimeLogo.png') {
+    logo.setAttribute('src', 'images/gemBGwText.png');
+  } else {
+    logo.setAttribute('src', 'images/DaytimeLogo.png');
+  }
 
+  body.classList.toggle('daytimebody');
+  search.classList.toggle('daytimeSearch');
+
+  posts.forEach(function(item) {
+
+    item.classList.toggle('post');
+    item.classList.toggle('daytimePosts');
+    console.log(item);
+  });
+
+  btns.forEach(function(button) {
+    button.classList.toggle('daytimeBTN');
+  });
   console.log("SWITCHMODE!")
-}
+};
 
-nightButton.addEventListener('click', changeBG);
+var nightButton = document.querySelector('.nightmode');
+nightButton.addEventListener('click', nightMode);
 
-}();

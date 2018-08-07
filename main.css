@@ -37,6 +37,11 @@
     padding-right: 15px;
 }
 
+.daytimeSearch {
+    border: 2px solid #383737;
+    border-radius: 2px;
+}
+
 .searchbar:focus{
    outline: none;
 }
@@ -56,17 +61,35 @@
     font-family: 'Lobster', cursive;
     margin-right: 5px;
     background: linear-gradient(to bottom, #a90329 0%,#8f0222 46%,#6d0019 100%);
-    border: 3px solid black;
+    border: 3px solid whitesmoke;
     color: whitesmoke;
     border-radius: 5px;
     transition: ease;
 }
 
 .buttonclass:hover {
-    font-size: 18px;
-    color: whitesmoke;
+    border: 3px solid #383737;
+    text-shadow:
+		-1px -1px 0 black,
+		1px -1px 0 black,
+		-1px 1px 0 black,
+		1px 1px 0 black;
+}
+
+.daytimeBTN {
+    color: black;
+    background: linear-gradient(to bottom, #ec2352 0%,#eb0f42 46%,#a00f31 100%);
+    border: 3px solid #383737;
+}
+
+.daytimeBTN:hover {
     border: 3px solid whitesmoke;
-    transition: ease;
+    text-shadow:
+		-1px -1px 0 whitesmoke,
+		1px -1px 0 whitesmoke,
+		-1px 1px 0 whitesmoke,
+		1px 1px 0 whitesmoke;
+
 }
 
 .buttonclass:focus {
@@ -89,6 +112,20 @@
     margin: 20px;
     background: linear-gradient(to bottom, #a90329 0%,#8f0222 46%,#6d0019 100%);
     border: 10px solid whitesmoke;
+    height: 100%;
+    background-origin: unset;
+    border-radius: 10px;
+    justify-content: space-around;
+}
+
+.daytimePosts {
+    background: linear-gradient(to bottom, #ec2352 0%,#eb0f42 46%,#a00f31 100%);
+    border: 10px solid #383737;
+    padding: 10px;
+    width: 90%;
+    display: flex;
+    opacity: .90;
+    margin: 20px;
     height: 100%;
     background-origin: unset;
     border-radius: 10px;
@@ -169,7 +206,6 @@ label {
 }
 
 .previous, .next {
-    color: white;
     cursor: pointer;
 }
 
@@ -188,18 +224,15 @@ label {
 
 .nav-buttons {
     text-align: right;
-    margin-right: 50px;
+    margin-right: 80px;
 }
 
 .nextprev {
     font-size: 14px;
     width: 70px;
-    margin: 0;
+    margin-right: 0;
     height: 30px;
 }
 
-.nextprev:hover {
-    border: 3px solid whitesmoke;
-    font-size: 14px;
-}
+
 
