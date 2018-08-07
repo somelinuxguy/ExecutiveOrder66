@@ -19,6 +19,10 @@
     margin-bottom: 100px;
 }
 
+.logo {
+    max-width: 100%;
+}
+
 .mainflex {
     display: flex;
     flex-direction: column;
@@ -274,7 +278,7 @@ label {
     .post {
         flex-direction: row;
         flex-wrap: nowrap;
-        align-items: flex-start;
+        align-items: stretch;
     }
     .posttext {
         order: 0;
