@@ -195,7 +195,7 @@ label {
 }
 
 .hide {
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 .loginmodal {
