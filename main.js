@@ -68,7 +68,7 @@ var nightMode = function() {
   var logo = document.querySelector('.logo');
   var btns = document.querySelectorAll('.buttonclass');
   var posts = document.querySelectorAll('.post, .daytimePosts');
-  var search = document.querySelector('.searchbar');
+  var textinputs = document.querySelectorAll('.searchbar');
   var modeBtn = document.querySelector('.nightmode');
   var modeIcon = document.querySelector('.colormodeicon');
 
@@ -88,7 +88,11 @@ var nightMode = function() {
   }
 
   body.classList.toggle('daytimebody');
-  search.classList.toggle('daytimeSearch');
+  
+  textinputs.forEach(function(tbox) {
+    tbox.classList.toggle('daytimeSearch');
+  });
+  
 
   posts.forEach(function(item) {
 
