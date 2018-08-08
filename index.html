@@ -49,7 +49,7 @@
 
                             <label>
                                 <span>Place Type:</span>
-                                <select name="placeType">
+                                <select name="placeType" class="placeType">
                                     <option value="fnb">Food And Beverage</option>
                                     <option value="retail">Retail</option>
                                     <option value="scenic">Scenic</option>
@@ -80,13 +80,22 @@
             <input name="searchInput" class="searchbar" type="text" placeholder="Search Gems by Keyword">
         </div>
         <div class="buttons">
-            <button name="submit" id="btnPostSubmit" class="buttonclass hide" type="button" value="Post">Post New Gem</button>
-            <select name="filterByType" class="buttonclass">
-                <option value="">Filter by Type: All</option>
+            <button name="submit" id="btnPostSubmit" class="buttonclass hide flexBTN" type="button" value="Post">Post New Gem</button>
+            <select name="filterByType" class="buttonclass flexBTN">
+                <option value="">Type: All</option>
                 <option value="fnb">Food And Beverage</option>
                 <option value="retail">Retail</option>
                 <option value="scenic">Scenic</option>
                 <option value="venue">Venue</option>
+            </select>
+            <select name="filterByRating" class="buttonclass flexBTN">
+                <option value="">Gem Rating: All</option>
+                <option value="0">No Gems</option>
+                <option value="1">1 Gem</option>
+                <option value="2">2 Gems</option>
+                <option value="3">3 Gems</option>
+                <option value="4">4 Gems</option>
+                <option value="5">5 Gems</option>
             </select>
         </div>
         <div class="nav-buttons">
@@ -94,7 +103,7 @@
             <button class="next buttonclass nextprev">Next</button>
         </div>
         <div class="postbody">
-            <div class="post">
+            <!-- <div class="post">
                 <img class="googleIMG" src="images/krogst.jpg">
                 <div class="posttext">
                     <div class="location">Krog Street Tunnel</div>
@@ -114,7 +123,7 @@
                 </div>
                 <img class="googleIMG" src="images/Mapsample.jpg">
                 <div class="buttonclass deletePost">Delete</div>
-            </div>
+            </div> -->
             
         </div>
         <div class="nav-buttons">
