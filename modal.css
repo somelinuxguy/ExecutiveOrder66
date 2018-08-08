@@ -26,7 +26,6 @@
     height: 75%;
     border-radius: 10px;
     border: 2px solid black;
-
 }
 
 .showmodal {
@@ -35,8 +34,6 @@
     transform: scale(1.0);
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
-
-
 
 .closebutton {
     float: top;
@@ -119,6 +116,21 @@
 
 .newgembutton:focus {
     outline: none;
+}
+
+.modalLOD {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    text-align: center;
+    background: linear-gradient(to right, azure, darkgray);
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.modalLODImage {
+    max-width: 300px;
 }
 
 @media (min-width: 768px) {
