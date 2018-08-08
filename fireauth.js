@@ -21,7 +21,7 @@ loginForm.addEventListener('submit', e => {
         console.log(e.message);
         displayFlashMessage("Sorry. Your login failed.  Try again.");
     });
-    promise.then(() => displayFlashMessage("You are logged in!"))
+    promise.then(() => displayFlashMessage("You are logged in!"));
 });
 
 // listen for signup
@@ -52,11 +52,13 @@ if (firebaseuser) {
     btnLogin.classList.add('hide');
     btnPostSubmit.classList.remove('hide');
     btnSignUp.classList.add('hide');
+    loginForm.reset();
 } else {
     console.log('See ya later...');
     btnLogout.classList.add('hide');
     btnPostSubmit.classList.add('hide');
     btnSignUp.classList.remove('hide');
     btnLogin.classList.remove('hide');
+    loginForm.reset();
     }
 });
