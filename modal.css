@@ -25,6 +25,7 @@
     width: 50%;
     height: 75%;
     border-radius: 10px;
+    border: 2px solid black;
 
 }
 
@@ -101,4 +102,16 @@
 
 .newgembutton:focus {
     outline: none;
+}
+
+@media (min-width: 768px) {
+    .newgembutton {
+        width: 50%; 
+    }
+}
+
+@media (min-width: 1024px) {
+    .newgembutton {
+        width: 30%; 
+    }
 }
