@@ -37,7 +37,8 @@ btnSignUp.addEventListener('click', e => {
 });
 
 btnLogout.addEventListener('click', e => {
-    firebase.auth().signOut();
+    const promise = firebase.auth().signOut();
+    promise.then(() => displayFlashMessage("You are logged out."));
 });
 
 // are we logged in?
@@ -50,7 +51,6 @@ if (firebaseuser) {
     btnSignUp.classList.add('hide');
 } else {
     console.log('See ya later...');
-    displayFlashMessage("You are logged out.");
     btnLogout.classList.add('hide');
     btnPostSubmit.classList.add('hide');
     btnSignUp.classList.remove('hide');

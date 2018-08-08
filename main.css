@@ -271,14 +271,18 @@ label {
 
 .flashMessage {
     position: fixed;
+    padding: 1em;
     top: 0.5em;
     left: 50%;
+    transform: translateX(-50%);
     display: block;
     transition-property: opacity;
     transition-duration: 1s;
-    background: white;
-    color: black;
     opacity: 1;
+    background: linear-gradient(to bottom, #a90329 0%,#8f0222 46%,#6d0019 100%);
+    border: 3px solid whitesmoke;
+    color: whitesmoke;
+    border-radius: 5px;
 }
 .flashMessage-hidden {
     opacity: 0;
