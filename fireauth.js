@@ -60,5 +60,5 @@ firebase.auth().onAuthStateChanged(firebaseuser => {
         btnSignUp.classList.remove('hide');
         btnLogin.classList.remove('hide');
         loginForm.reset();
-        }
+    }
 });
