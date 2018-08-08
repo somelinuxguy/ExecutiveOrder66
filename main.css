@@ -228,6 +228,7 @@ label {
     position: absolute;
     top: 0.4em;
     right: 0.2em;
+    display: flex;
 }
 
 .post-button {

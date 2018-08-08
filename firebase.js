@@ -29,7 +29,7 @@ var savePost = function(postData) {
   loadPosts();
 }
 
-var editPost = function(postData) {
+var editPost = function(myPostKey, postData) {
   firebase.database().ref('posts/' + myPostKey).set(postData);
   loadPosts();
 }
