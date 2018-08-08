@@ -13,6 +13,7 @@ var database = firebase.database();
 var postList = [];
 
 var convertToArray = function(data) {
+  postList = [];
   Object.values(data).forEach(function(postFromFB) {
       console.log('Push post to post list: ' + postFromFB.placeName)
       postList.push(postFromFB);
@@ -31,6 +32,11 @@ var savePost = function(postData) {
   loadPosts();
 }
 
+var editPost = function(myPostKey, postData) {
+  firebase.database().ref('posts/' + myPostKey).set(postData);
+  loadPosts();
+}
+
 var removePost = function(post, firebaseuser) {
       console.log('I am: ' + firebaseuser.uid);
       if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) { 
@@ -41,15 +47,14 @@ var removePost = function(post, firebaseuser) {
 }
 
 var loadPosts = function(filter, startPost = 0, numPosts = 5) {
-  postList = [];
   console.log('loading saved posts...');
   firebase.database().ref('posts').once('value').then(function(data) {
     console.log(data.val());
-    convertToArray(data.val(), postList);
-    postList = postList.sort((a, b) => a.dateTime < b.dateTime);
+    convertToArray(data.val());
+    postList = postList.sort((a, b) => b.dateTime - a.dateTime);
+    console.log('sorted', postList);
     displayPostTotal = postList.length;
     var filteredPostList;
-    console.log("Filter: " + filter);
     if (filter) {
       if (filter.hasOwnProperty('placeType')) {
         if (filter.placeType === "") {
