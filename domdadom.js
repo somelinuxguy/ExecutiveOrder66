@@ -66,7 +66,7 @@ var populatePosts = function(postList, start, numPosts) {
         if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) {
             var postDelete = document.createElement('button');
             postDelete.classList.add('buttonclass', 'deletePost');
-            postDelete.textContent = "X";
+            postDelete.textContent = "Delete";
             postContainer.appendChild(postDelete);
             var removePostDOM = function(event) {
                 removePost(post, firebaseuser);
