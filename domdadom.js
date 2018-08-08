@@ -90,8 +90,7 @@ var populatePosts = function(postList, start, numPosts) {
                 console.log(post);
                 var myForm = document.querySelector('.submissionform');
                 myForm.removeEventListener('submit', newPost);
-                var handleSubmit = function(event) {}
-                myForm.addEventListener('submit', (event) => {
+                var handleSubmit = function(event) {
                     event.preventDefault();
                     var firebaseuser = firebase.auth().currentUser;
                     if (firebaseuser) {
@@ -104,14 +103,15 @@ var populatePosts = function(postList, start, numPosts) {
                             placeType: myPlaceType.value,
                             placeExperience: myExperience.value,
                             placeRating: ratingValue,
-                            placeImageURL: place.placeImageURL,
-                            dateTime: place.dateTime
+                            placeImageURL: post.placeImageURL,
+                            dateTime: post.dateTime
                         };
                     }
                     editPost(post.postKey, newPostData);
-                    myForm.removeEventListener('submit', newPost);
-                    myForm.addEventListener('submit', (event)
-                });
+                    myForm.removeEventListener('submit', handleSubmit);
+                    myForm.addEventListener('submit', newPost);
+                };
+                myForm.addEventListener('submit', handleSubmit);
             };
             postEdit.addEventListener('click', editPostDOM);
 
