@@ -64,9 +64,9 @@ var populatePosts = function(postList, start, numPosts) {
         postContainer.appendChild(postMap);
 
         if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) {
-            var postDelete = document.createElement('div');
-            postDelete.classList.add('deletePost');
-            postDelete.textContent = "DEL";
+            var postDelete = document.createElement('button');
+            postDelete.classList.add('buttonclass', 'deletePost');
+            postDelete.textContent = "X";
             postContainer.appendChild(postDelete);
             var removePostDOM = function(event) {
                 removePost(post, firebaseuser);
