@@ -64,15 +64,25 @@ var populatePosts = function(postList, start, numPosts) {
         postContainer.appendChild(postMap);
 
         if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) {
+            var postButtonContainer = document.createElement('div');
             var postDelete = document.createElement('button');
-            postDelete.classList.add('buttonclass', 'deletePost');
+            postDelete.classList.add('buttonclass', 'post-button', 'deletePost');
             postDelete.textContent = "Delete";
-            postContainer.appendChild(postDelete);
-            var removePostDOM = function(event) {
+            postButtonContainer.appendChild(postDelete);
+            var removePostDOM = function() {
                 removePost(post, firebaseuser);
                 displayFlashMessage('You have successfully removed post.');
             };
             postDelete.addEventListener('click', removePostDOM);
+            var postEdit = document.createElement('button');
+            postEdit.classList.add('buttonclass', 'post-button', 'editPost')
+            postEdit.textContent = "Edit";
+            postButtonContainer.appendChild(postEdit);
+            var editPostDOM = function() {
+                editPost(post, firebaseuser);
+            };
+            postDelete.addEventListener('click', editPostDOM);
+            postContainer.appendChild(postButtonContainer);
         }
         container.appendChild(postContainer);
     });

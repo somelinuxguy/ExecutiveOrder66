@@ -29,6 +29,11 @@ var savePost = function(postData) {
   loadPosts();
 }
 
+var editPost = function(postData) {
+  firebase.database().ref('posts/' + myPostKey).set(postData);
+  loadPosts();
+}
+
 var removePost = function(post, firebaseuser) {
       console.log('I am: ' + firebaseuser.uid);
       if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) { 

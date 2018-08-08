@@ -224,10 +224,13 @@ label {
     cursor: pointer;
 }
 
-.deletePost {
+.post-button-container {
     position: absolute;
     top: 0.4em;
     right: 0.2em;
+}
+
+.post-button {
     width: auto;
     height: auto;
     font-family: Arial, Helvetica, sans-serif;
