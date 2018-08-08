@@ -16,7 +16,7 @@
     height: 200px;
     margin-top: 8%;
     padding-top: 60px;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
 .logo {
@@ -319,4 +319,16 @@ label {
 .loginbasis {
     text-align: right;
     flex-basis: 100%
+}
+
+.legion {
+    background-color: rgba(245, 245, 245, 0.758);
+    border: 2px solid #383737;
+    margin-top: 75px;
+    position: fixed;
+    border-radius: 3px;
+    z-index: 1;
+}
+.legion:focus {
+    outline: none;
 }
