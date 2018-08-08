@@ -3,12 +3,12 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    background-image: url('Images/BGblack2.jpg');
+    background-image: url('images/BGblack2.jpg');
     background-repeat: repeat;
 }
 
 .daytimebody {
-    background-image: url('Images/WhiteBG2.png');
+    background-image: url('images/WhiteBG2.png');
 }
 
 .mainlogo {
@@ -69,10 +69,10 @@
 .buttonclass:hover {
     border: 3px solid #383737;
     text-shadow:
-		-1px -1px 0 black,
-		1px -1px 0 black,
-		-1px 1px 0 black,
-		1px 1px 0 black;
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
 }
 
 .daytimeBTN {
@@ -84,10 +84,10 @@
 .daytimeBTN:hover {
     border: 3px solid whitesmoke;
     text-shadow:
-		-1px -1px 0 whitesmoke,
-		1px -1px 0 whitesmoke,
-		-1px 1px 0 whitesmoke,
-		1px 1px 0 whitesmoke;
+        -1px -1px 0 whitesmoke,
+        1px -1px 0 whitesmoke,
+        -1px 1px 0 whitesmoke,
+        1px 1px 0 whitesmoke;
 
 }
 
@@ -138,20 +138,20 @@
     padding-top: 20px;
     font-family: 'Lobster', cursive;
     text-shadow:
-		-1px -1px 0 white,
-		1px -1px 0 white,
-		-1px 1px 0 white,
-		1px 1px 0 white;
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
 }
 
 .author {
     font-size: 20px;
     font-family: 'Lobster', cursive;
     text-shadow:
-		-1px -1px 0 white,
-		1px -1px 0 white,
-		-1px 1px 0 white,
-		1px 1px 0 white;
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
 }
 
 .postcontent {
@@ -201,10 +201,10 @@ label {
     font-family: 'Lobster', cursive;
     margin-bottom: 20px;
     text-shadow:
-		-1px -1px 0 black,
-		1px -1px 0 black,
-		-1px 1px 0 black,
-		1px 1px 0 black;
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
 }
 
 .previous, .next {
@@ -215,7 +215,6 @@ label {
     font-family: Arial;
     font-weight: bolder;
     color: white;
-    display: none;
 }
 
 .hide {
@@ -287,6 +286,7 @@ label {
     width: 80px;
     margin: 5px;
 }
+
  .loginbox {
     padding: 5px;
     padding-left: 2px;
@@ -300,4 +300,3 @@ label {
     display: block;
     z-index: 1;
 }
-

@@ -29,10 +29,13 @@ var savePost = function(postData) {
   loadPosts();
 }
 
-var removePost = function(post) {
-      console.log('Post deleted: ' + post.postKey);
-      firebase.database().ref('posts/' + post.postKey).remove();
-      loadPosts();
+var removePost = function(post, firebaseuser) {
+      console.log('I am: ' + firebaseuser.uid);
+      if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) { 
+        console.log('Post deleted: ' + post.postKey);
+        firebase.database().ref('posts/' + post.postKey).remove();
+        loadPosts();
+      }
 }
 
 var loadPosts = function(filter, startPost = 0, numPosts = 5) {
