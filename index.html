@@ -36,12 +36,42 @@
             </div>
             <div class="loginbasis">
                 <button id="btnLogin" class="buttonclass nextprev" type="submit">Log In</button>
-                <div id="btnLogout" class="buttonclass nextprev hide" >Log Out</div>
-                <div id="btnSignUp" class="buttonclass nextprev" >Sign Up</div>
+                <button id="btnLogout" class="buttonclass nextprev hide" type="reset">Log Out</button>
+                <button class="buttonclass nextprev" name="signUp" id="btnSignUp" type="menu">Sign Up</button>
             </div>
         </div>
     </form>
     <div class="mainflex">
+            <div class="modaloutter2">
+                <div class="modalcontent2">
+                    <form action="" class="submissionform">
+                        <div class="thankyou">Thank you for signing up with Hidden Gem Atlanta!</div>
+                        <label>
+                            <span>First Name:</span>
+                            <input type="text" class="usernameinput" name="userfirstname" required>
+                        </label>
+                        <label>
+                            <span>Last Name:</span>
+                            <input  type="text" class="usernameinput" name="userlastname" required>
+                        </label>
+                        <label>
+                            <span>Email Address:</span>
+                            <input type="email" class="usernameinput" name="useremail" required>
+                        </label>
+                        <label>
+                            <span>Password:</span>
+                            <input type="password" class="usernameinput" name="userpassword" required>
+                        </label>
+                        <label>
+                            <span>Deepest Darkest Secret:</span>
+                            <input type="text" class="usernameinput" name="usersecret" required>
+                        </label>
+                        <button class="buttonclass" name="btnSignup">Sign Up!</button>  
+                    </form>
+                    <button class="closebutton" name="closebutton2">&chi;</button>
+                </div>
+            </div>      
+        
             <div class="modaloutter">
                     <div class="modalcontent">
                         <form action="" class="submissionform">
@@ -77,7 +107,7 @@
                             </label>
                             <button class="newgembutton" type="submit">Submit Your Gem!</button>  
                         </form>
-                        <button class="closebutton">&chi;</button>
+                        <button class="closebutton" name="closebutton">&chi;</button>
                     </div>
                 </div>
 
