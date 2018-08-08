@@ -10,7 +10,7 @@ var populatePosts = function(postList, start, numPosts) {
     console.log(postList);
     clearDisplay();
     postListFirstFive = postList.slice(start, start + numPosts);
-
+    var firebaseuser = firebase.auth().currentUser;
     var container = document.querySelector(".postbody");
     postListFirstFive.forEach(function(post) {
         var postContainer = document.createElement('div');
@@ -52,7 +52,7 @@ var populatePosts = function(postList, start, numPosts) {
 
         for (var i = 0; i < Number(post.placeRating); i++) {
             var ratingGem = document.createElement('img');
-            ratingGem.setAttribute('src', 'Images/gem3.png');
+            ratingGem.setAttribute('src', 'images/gem3.png');
             ratingGem.classList.add('ratinggem');
             postRating.appendChild(ratingGem);
         }
@@ -63,19 +63,19 @@ var populatePosts = function(postList, start, numPosts) {
         postMap.src = getLocation(post.placeName);
         postContainer.appendChild(postMap);
 
-        var postDelete = document.createElement('div');
-        postDelete.classList.add('deletePost');
-        postDelete.textContent = "DEL";
-        postContainer.appendChild(postDelete);
-        var removePostDOM = function(event) {
-            removePost(post);
-        };
-        postDelete.addEventListener('click', removePostDOM);
-
+        if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) {
+            var postDelete = document.createElement('div');
+            postDelete.classList.add('deletePost');
+            postDelete.textContent = "DEL";
+            postContainer.appendChild(postDelete);
+            var removePostDOM = function(event) {
+                removePost(post, firebaseuser);
+            };
+            postDelete.addEventListener('click', removePostDOM);
+        }
         container.appendChild(postContainer);
     });
 }
-
 
 //     Just for reference:
 // {   placeName: string,
@@ -89,27 +89,31 @@ var populatePosts = function(postList, start, numPosts) {
 
 var newPost = function(event) {
     event.preventDefault();
-    toggleModal(event);
-    var handleURL = function(url) {
-        console.log('New Post. Saving...');
-        var myAuthor = document.querySelector('[name="author"]');
-        var myPlaceType = document.querySelector('[name="placeType"]');
-        var myExperience = document.querySelector('[name="placeExperience"]');
-        var timestamp = Date.now();
-        var newPostData = {
-            placeName: myPlace.value,
-            author: myAuthor.value,
-            placeType: myPlaceType.value,
-            placeExperience: myExperience.value,
-            placeRating: ratingValue,
-            placeImageURL: url,
-            dateTime: timestamp
+    var firebaseuser = firebase.auth().currentUser;
+    if (firebaseuser) {
+        toggleModal(event);
+        var handleURL = function(url) {
+            console.log('New Post. Saving...');
+            var myAuthor = document.querySelector('[name="author"]');
+            var myPlaceType = document.querySelector('[name="placeType"]');
+            var myExperience = document.querySelector('[name="placeExperience"]');
+            var timestamp = Date.now();
+            var newPostData = {
+                placeName: myPlace.value,
+                placeOwner: firebaseuser.uid,
+                author: myAuthor.value,
+                placeType: myPlaceType.value,
+                placeExperience: myExperience.value,
+                placeRating: ratingValue,
+                placeImageURL: url,
+                dateTime: timestamp
+                };
+            console.log(newPostData);
+            savePost(newPostData);
             };
-        console.log(newPostData);
-        savePost(newPostData);
-    };
-    var myPlace = document.querySelector('[name="placeName"]');
-    getImgSrc(myPlace.value, handleURL);
+        var myPlace = document.querySelector('[name="placeName"]');
+        getImgSrc(myPlace.value, handleURL);
+    } else {
+        console.log('Sorry. You arent logged in.');
+    }
 }
-
-
