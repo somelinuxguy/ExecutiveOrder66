@@ -46,7 +46,6 @@ btnLogout.addEventListener('click', e => {
 
 // are we logged in?
 firebase.auth().onAuthStateChanged(firebaseuser => {
-
 if (firebaseuser) {
     console.log('Logged in: ' + firebaseuser.email);
     btnLogout.classList.remove('hide');
@@ -62,3 +61,4 @@ if (firebaseuser) {
     btnLogin.classList.remove('hide');
     loginForm.reset();
     }
+});
