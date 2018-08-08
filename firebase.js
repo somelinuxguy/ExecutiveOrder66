@@ -13,6 +13,7 @@ var database = firebase.database();
 var postList = [];
 
 var convertToArray = function(data) {
+  postList = [];
   Object.values(data).forEach(function(postFromFB) {
       console.log('Push post to post list: ' + postFromFB.placeName)
       postList.push(postFromFB);
@@ -44,11 +45,10 @@ var removePost = function(post, firebaseuser) {
 }
 
 var loadPosts = function(filter, startPost = 0, numPosts = 5) {
-  postList = [];
   console.log('loading saved posts...');
   firebase.database().ref('posts').once('value').then(function(data) {
     console.log(data.val());
-    convertToArray(data.val(), postList);
+    convertToArray(data.val());
     postList = postList.sort((a, b) => b.dateTime - a.dateTime);
     console.log('sorted', postList);
     displayPostTotal = postList.length;
