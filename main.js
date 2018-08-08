@@ -119,4 +119,4 @@ var displayFlashMessage = function(message) {
   }, 500);
 };
 
-displayFlashMessage('hello...');
+displayFlashMessage("Everything is awesome, everything is cool when your part of a team!");
