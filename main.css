@@ -127,6 +127,8 @@
 }
 
 .daytimePosts {
+    position: relative;
+    flex-direction: column;
     background: linear-gradient(to bottom, #ec2352 0%,#eb0f42 46%,#a00f31 100%);
     border: 10px solid #383737;
     padding: 10px;
@@ -138,6 +140,7 @@
     background-origin: unset;
     border-radius: 10px;
     justify-content: space-around;
+    align-items: center;
 }
 
 .location {
@@ -167,10 +170,10 @@
     margin: 10px;
     padding-top: 10px;
     word-break: break-word;
-    font-size: 16px;
+    font-size: 18px;
     padding-left: 15px;
     padding-right: 15px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Cabin', semi-bold;
     background: rgba(245, 245, 245, 0.8);
     border-radius: 15px;
     padding: 10px;
@@ -180,8 +183,8 @@
 .ratinggem {
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 18px;
-    padding: 0;
+    height: 30px;
+    padding: 5px;
 }
 
 .posttext {
@@ -211,7 +214,7 @@ label {
     font-size: 16px;
     margin: 10px;
     color: whitesmoke;
-    font-family: 'Lobster', cursive;
+    font-family: 'Cabin', semi-bold;
     margin-bottom: 20px;
     text-shadow:
         -1px -1px 0 black,
@@ -300,14 +303,18 @@ label {
         flex-direction: row;
         flex-wrap: wrap;
     }
+    .daytimePosts {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
     .posttext {
         order: 1;
         flex: 1;
         flex-basis: 100%;
     }
     .ratinggem {
-        height: 30px;
-        padding: 5px;
+        height: 40px;
+        padding: 10px;
     }
     .newgembutton {
         width: 50%; 
@@ -320,13 +327,18 @@ label {
         flex-wrap: nowrap;
         align-items: stretch;
     }
+    .daytimePosts {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
     .posttext {
         order: 0;
         flex: initial;
     }
     .ratinggem {
-        height: 40px;
-        padding: 10px;
+        height: 50px;
+        padding: 15px;
     }
     .newgembutton {
         width: 30%; 
