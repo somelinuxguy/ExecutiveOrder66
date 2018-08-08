@@ -1,14 +1,14 @@
-var gem1 = document.querySelector("[name='gem1']");
-var gem2 = document.querySelector("[name='gem2']");
-var gem3 = document.querySelector("[name='gem3']");
-var gem4 = document.querySelector("[name='gem4']");
-var gem5 = document.querySelector("[name='gem5']");
-var rating = document.querySelector(".ratinglabel")
+const gem1 = document.querySelector("[name='gem1']");
+const gem2 = document.querySelector("[name='gem2']");
+const gem3 = document.querySelector("[name='gem3']");
+const gem4 = document.querySelector("[name='gem4']");
+const gem5 = document.querySelector("[name='gem5']");
+const rating = document.querySelector(".ratinglabel")
 
-var ratingValue = 0;
+var ratingValue = 0;  // keep track of rating
 
 
-var rate = function(event) {
+const rate = function(event) {
     if (event.target === gem1) {
         gem1.setAttribute('src', 'images/gem3.png');
         gem2.setAttribute('src', 'images/unclickedgem.png')

@@ -1,29 +1,27 @@
-var myForm = document.querySelector(".submissionform");
-var startPost = 0;
-var numPosts = 5;
-var displayPostTotal;
+const myForm = document.querySelector(".submissionform");
+const startPost = 0;
+const numPosts = 5;
+var displayPostTotal;  // track number of posts currently displayed.
 loadPosts(null, startPost, numPosts);
 
 myForm.addEventListener('submit', newPost);
 
-var filterElement = document.querySelector('[name="filterByType"]');
-console.log(filterElement);
+const filterElement = document.querySelector('[name="filterByType"]');
 filterElement.addEventListener('change', function(event) {
   loadPosts({placeType: event.currentTarget.value});
 })
 
-var filterRating = document.querySelector('[name="filterByRating"]');
-console.log(filterRating);
+const filterRating = document.querySelector('[name="filterByRating"]');
 filterRating.addEventListener('change', function(event) {
   loadPosts({placeRating: event.currentTarget.value});
 })
 
-var searchBar = document.querySelector("[name='searchInput'")
+const searchBar = document.querySelector("[name='searchInput'")
 searchBar.addEventListener('input', function(event) {
   loadPosts({placeName: event.currentTarget.value});
 });
 
-var prevBtns = document.querySelectorAll('.previous');
+const prevBtns = document.querySelectorAll('.previous');
 prevBtns.forEach(function(previousElement) {
   previousElement.addEventListener('click', function(){
     if (startPost >= numPosts) {
@@ -46,7 +44,7 @@ prevBtns.forEach(function(previousElement) {
   });
 });
 
-var nextBtns = document.querySelectorAll('.next');
+const nextBtns = document.querySelectorAll('.next');
 nextBtns.forEach(function(nextElement) {
   nextElement.addEventListener('click', function(){
     if (startPost < displayPostTotal - numPosts) { 
@@ -69,7 +67,7 @@ nextBtns.forEach(function(nextElement) {
    });
 });
 
-var nightMode = function() {
+const nightMode = function() {
   var body = document.querySelector('.mainbody');
   var logo = document.querySelector('.logo');
   var btns = document.querySelectorAll('.buttonclass');
@@ -111,11 +109,11 @@ var nightMode = function() {
   console.log("SWITCHMODE!")
 };
 
-var nightButton = document.querySelector('.nightmode');
+const nightButton = document.querySelector('.nightmode');
 nightButton.addEventListener('click', nightMode);
 
 
-var displayFlashMessage = function(message) {
+const displayFlashMessage = function(message) {
   var flashMessageElement = document.createElement('div');
   flashMessageElement.classList.add('flashMessage');
   flashMessageElement.textContent = message;
@@ -125,4 +123,4 @@ var displayFlashMessage = function(message) {
   }, 500);
 };
 
-displayFlashMessage("Everything is awesome, everything is cool when your part of a team!");
+displayFlashMessage("Everything is awesome!!!!!!");
