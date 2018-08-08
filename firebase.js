@@ -69,9 +69,13 @@ var loadPosts = function(filter, startPost = 0, numPosts = 5) {
         populatePosts(filteredPostList, startPost, numPosts);
         displayPostTotal = filteredPostList.length;
       } else if (filter.hasOwnProperty('placeRating')) {
-        filteredPostList = postList.filter(post => post.placeRating === filter.placeRating);
-        populatePosts(filteredPostList, startPost, numPosts);
-        displayPostTotal = filteredPostList.length;
+        if (filter.placeRating === "") {
+          populatePosts(postList, startPost, numPosts);
+        } else {
+          filteredPostList = postList.filter(post => post.placeRating === filter.placeRating);
+          populatePosts(filteredPostList, startPost, numPosts);
+          displayPostTotal = filteredPostList.length;
+        }
       }
     } else {
     populatePosts(postList, startPost, numPosts);

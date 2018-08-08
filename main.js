@@ -40,6 +40,12 @@ prevBtns.forEach(function(previousElement) {
         }
         filterObject.placeName = searchBar.value;
       }
+      if (filterRating.value) {
+        if (!filterObject) {
+          filterObject = {};
+        }
+        filterObject.placeRating = filterRating.value;
+      }
       startPost -= numPosts;
       loadPosts(filterObject, startPost, numPosts);
     }
@@ -50,23 +56,29 @@ var nextBtns = document.querySelectorAll('.next');
 nextBtns.forEach(function(nextElement) {
   nextElement.addEventListener('click', function(){
     if (startPost < displayPostTotal - numPosts) { 
-       var filterObject;
-       if (filterElement.value) {
-         if (!filterObject) {
-           filterObject = {};
-         }
-         filterObject.placeType = filterElement.value;
-       }
-       if (searchBar.value) {
-         if (!filterObject) {
-           filterObject = {};
-         }
-         filterObject.placeName = searchBar.value;
-       }
-       startPost += numPosts;
-       loadPosts(filterObject, startPost, numPosts);
-     }
-   });
+      var filterObject;
+      if (filterElement.value) {
+        if (!filterObject) {
+          filterObject = {};
+        }
+        filterObject.placeType = filterElement.value;
+      }
+      if (searchBar.value) {
+        if (!filterObject) {
+          filterObject = {};
+        }
+        filterObject.placeName = searchBar.value;
+      }
+      if (filterRating.value) {
+        if (!filterObject) {
+          filterObject = {};
+        }
+        filterObject.placeRating = filterRating.value;
+      }
+      startPost += numPosts;
+      loadPosts(filterObject, startPost, numPosts);
+    }
+  });
 });
 
 var nightMode = function() {
