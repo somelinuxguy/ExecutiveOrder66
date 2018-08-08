@@ -79,7 +79,7 @@
     transform: translate(-50%, -50%);
     text-align: center;
     background: linear-gradient(to right, azure, darkgray);
-    width: 45%;
+    min-width: 45%;
     height: 70%;
     padding: 25px;
     border-radius: 10px;
@@ -110,13 +110,14 @@
 }
 
 .submissionform {
+    max-height: 100%;
+    min-width: 300px;
     flex-basis: 95%;
     display: flex;
     align-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    flex-shrink: 1;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .usernameinput {
