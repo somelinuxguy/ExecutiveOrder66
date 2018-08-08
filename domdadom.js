@@ -10,7 +10,7 @@ var populatePosts = function(postList, start, numPosts) {
     console.log(postList);
     clearDisplay();
     postListFirstFive = postList.slice(start, start + numPosts);
-
+    var firebaseuser = firebase.auth().currentUser;
     var container = document.querySelector(".postbody");
     postListFirstFive.forEach(function(post) {
         var postContainer = document.createElement('div');
@@ -52,7 +52,7 @@ var populatePosts = function(postList, start, numPosts) {
 
         for (var i = 0; i < Number(post.placeRating); i++) {
             var ratingGem = document.createElement('img');
-            ratingGem.setAttribute('src', 'Images/gem3.png');
+            ratingGem.setAttribute('src', 'images/gem3.png');
             ratingGem.classList.add('ratinggem');
             postRating.appendChild(ratingGem);
         }
@@ -63,19 +63,19 @@ var populatePosts = function(postList, start, numPosts) {
         postMap.src = getLocation(post.placeName);
         postContainer.appendChild(postMap);
 
-        var postDelete = document.createElement('div');
-        postDelete.classList.add('deletePost');
-        postDelete.textContent = "DEL";
-        postContainer.appendChild(postDelete);
-        var removePostDOM = function(event) {
-            removePost(post);
-        };
-        postDelete.addEventListener('click', removePostDOM);
-
+        if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) {
+            var postDelete = document.createElement('div');
+            postDelete.classList.add('deletePost');
+            postDelete.textContent = "DEL";
+            postContainer.appendChild(postDelete);
+            var removePostDOM = function(event) {
+                removePost(post, firebaseuser);
+            };
+            postDelete.addEventListener('click', removePostDOM);
+        }
         container.appendChild(postContainer);
     });
 }
-
 
 //     Just for reference:
 // {   placeName: string,
