@@ -1,5 +1,5 @@
 // Initialize Firebase
-var config = {
+const config = {
   apiKey: firebaseAPIKey,
   authDomain: "legionofdoom-" + firebaseIdentifier + ".firebaseapp.com",
   databaseURL: "https://legionofdoom-" + firebaseIdentifier + ".firebaseio.com",
@@ -9,10 +9,10 @@ var config = {
   };
 
 firebase.initializeApp(config);
-var database = firebase.database();
-var postList = [];
+const database = firebase.database();
+var postList = [];  // The list of posts.
 
-var convertToArray = function(data) {
+const convertToArray = function(data) {
   postList = [];
   Object.values(data).forEach(function(postFromFB) {
       console.log('Push post to post list: ' + postFromFB.placeName)
@@ -22,7 +22,7 @@ var convertToArray = function(data) {
   console.log(postList);
 }
 
-var savePost = function(postData) {
+const savePost = function(postData) {
   console.log('saving post: ' + postData.placeName);
   var myPostKey = firebase.database().ref().child('posts').push().key;
   postData.postKey = myPostKey;
@@ -32,12 +32,14 @@ var savePost = function(postData) {
   loadPosts();
 }
 
-var editPost = function(myPostKey, postData) {
+const editPost = function(myPostKey, postData) {
   firebase.database().ref('posts/' + myPostKey).set(postData);
+  var myForm = document.querySelector(".submissionform");
+  myForm.reset();
   loadPosts();
 }
 
-var removePost = function(post, firebaseuser) {
+const removePost = function(post, firebaseuser) {
       console.log('I am: ' + firebaseuser.uid);
       if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) { 
         console.log('Post deleted: ' + post.postKey);
@@ -46,7 +48,7 @@ var removePost = function(post, firebaseuser) {
       }
 }
 
-var loadPosts = function(filter, startPost = 0, numPosts = 5) {
+const loadPosts = function(filter, startPost = 0, numPosts = 5) {
   console.log('loading saved posts...');
   firebase.database().ref('posts').once('value').then(function(data) {
     console.log(data.val());

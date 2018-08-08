@@ -1,4 +1,4 @@
-var clearDisplay = function() {
+const clearDisplay = function() {
     console.log("Clearing Display");
     var container = document.querySelector(".postbody");
     while (container.firstChild) {
@@ -6,7 +6,7 @@ var clearDisplay = function() {
     }
 }
 
-var populatePosts = function(postList, start, numPosts) {
+const populatePosts = function(postList, start, numPosts) {
     console.log(postList);
     clearDisplay();
     postListFirstFive = postList.slice(start, start + numPosts);
@@ -141,7 +141,7 @@ var populatePosts = function(postList, start, numPosts) {
 //     postKey: string
 // }
 
-var newPost = function(event) {
+const newPost = function(event) {
     event.preventDefault();
     var firebaseuser = firebase.auth().currentUser;
     if (firebaseuser) {
