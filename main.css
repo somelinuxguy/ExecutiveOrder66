@@ -180,8 +180,8 @@
 .ratinggem {
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 40px;
-    padding: 5px;
+    height: 18px;
+    padding: 0;
 }
 
 .posttext {
@@ -305,6 +305,13 @@ label {
         flex: 1;
         flex-basis: 100%;
     }
+    .ratinggem {
+        height: 30px;
+        padding: 5px;
+    }
+    .newgembutton {
+        width: 50%; 
+    }
 }
 
 @media (min-width: 1024px) {
@@ -316,6 +323,13 @@ label {
     .posttext {
         order: 0;
         flex: initial;
+    }
+    .ratinggem {
+        height: 40px;
+        padding: 10px;
+    }
+    .newgembutton {
+        width: 30%; 
     }
 }
 
