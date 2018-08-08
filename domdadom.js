@@ -113,9 +113,6 @@ var newPost = function(event) {
             console.log(newPostData);
             savePost(newPostData);
             };
-        // clear form
-        var myForm = document.querySelector(".submissionform");
-        myForm.reset();
         var myPlace = document.querySelector('[name="placeName"]');
         getImgSrc(myPlace.value, handleURL);
     } else {

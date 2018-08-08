@@ -26,6 +26,8 @@ var savePost = function(postData) {
   var myPostKey = firebase.database().ref().child('posts').push().key;
   postData.postKey = myPostKey;
   firebase.database().ref('posts/' + myPostKey).set(postData);
+  var myForm = document.querySelector(".submissionform");
+  myForm.reset();
   loadPosts();
 }
 
