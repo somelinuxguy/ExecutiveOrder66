@@ -64,15 +64,68 @@ var populatePosts = function(postList, start, numPosts) {
         postContainer.appendChild(postMap);
 
         if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) {
+            var postButtonContainer = document.createElement('div');
+            postButtonContainer.classList.add('post-button-container');
+
+            var postEdit = document.createElement('button');
+            postEdit.classList.add('buttonclass', 'post-button', 'editPost')
+            postEdit.textContent = "Edit";
+            postButtonContainer.appendChild(postEdit);
+            var editPostDOM = function() {
+                var myPlace = document.querySelector('[name="placeName"]');
+                var myAuthor = document.querySelector('[name="author"]');
+                var myPlaceType = document.querySelector('[name="placeType"]');
+                var myExperience = document.querySelector('[name="placeExperience"]');
+                for (let i = 1; i <= post.placeRating; i++) {
+                    let gem = document.querySelector(`[name='gem${i}']`);
+                    gem.setAttribute('src', 'images/gem3.png');
+                    console.log(gem);
+                }
+                ratingValue = post.placeRating;
+                myPlace.value = post.placeName;
+                myAuthor.value = post.author;
+                myPlaceType.value = post.placeType;
+                myExperience.value = post.placeExperience;
+                modal.classList.toggle("showmodal");
+                console.log(post);
+                var myForm = document.querySelector('.submissionform');
+                myForm.removeEventListener('submit', newPost);
+                var handleSubmit = function(event) {
+                    event.preventDefault();
+                    var firebaseuser = firebase.auth().currentUser;
+                    if (firebaseuser) {
+                        toggleModal(event);
+                        displayFlashMessage('You have successfully created a new post.');
+                        var newPostData = {
+                            placeName: myPlace.value,
+                            placeOwner: firebaseuser.uid,
+                            author: myAuthor.value,
+                            placeType: myPlaceType.value,
+                            placeExperience: myExperience.value,
+                            placeRating: ratingValue,
+                            placeImageURL: post.placeImageURL,
+                            dateTime: post.dateTime
+                        };
+                    }
+                    editPost(post.postKey, newPostData);
+                    myForm.removeEventListener('submit', handleSubmit);
+                    myForm.addEventListener('submit', newPost);
+                };
+                myForm.addEventListener('submit', handleSubmit);
+            };
+            postEdit.addEventListener('click', editPostDOM);
+
             var postDelete = document.createElement('button');
-            postDelete.classList.add('buttonclass', 'deletePost');
+            postDelete.classList.add('buttonclass', 'post-button', 'deletePost');
             postDelete.textContent = "Delete";
-            postContainer.appendChild(postDelete);
-            var removePostDOM = function(event) {
+            postButtonContainer.appendChild(postDelete);
+            var removePostDOM = function() {
                 removePost(post, firebaseuser);
                 displayFlashMessage('You have successfully removed post.');
             };
             postDelete.addEventListener('click', removePostDOM);
+            
+            postContainer.appendChild(postButtonContainer);
         }
         container.appendChild(postContainer);
     });
