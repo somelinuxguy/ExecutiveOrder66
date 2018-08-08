@@ -9,6 +9,7 @@
     opacity: 0;
     visibility: hidden;
     transform: scale(2);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 .modalcontent {
@@ -21,9 +22,10 @@
     transform: translate(-50%, -50%);
     background: linear-gradient(to right, azure, darkgray);
     padding: 25px;
-    width: 700px;
-    height: 400px;
-    border-radius: 25px;
+    width: 50%;
+    height: 75%;
+    border-radius: 10px;
+
 }
 
 .showmodal {
@@ -33,21 +35,22 @@
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
+
+
 .closebutton {
     float: top;
-    height: 25px;
+    height: 1.3rem;
     width: 1.5rem;
-    line-height: 1.5rem;
     text-align: center;
     cursor: pointer;
-    border-radius: 5px;
-    background-color: black;
-    color: red;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.288);
+    color: rgba(0, 0, 0, 0.712);
 }
 
 .closebutton:hover {
-    background-color: darkgray;
-    color: red;
+    border: 1px solid black;
+    color: black;
 }
 
 .submissionform {
@@ -61,19 +64,19 @@
 
 .usernameinput {
     height: 15px;
-    width: 200px;
+    width: 100%;
     padding-left: 5px;
 }
 
 .locationinput {
     height: 15px;
-    width: 400px;
+    width: 100%;
     padding-left: 5px;
 }
 
 .experienceinput {
-    height: 200px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
     text-align: top;
     padding-left: 5px;
 }
@@ -82,16 +85,16 @@
     padding-left: 5px;
     height: 50px;
     font-size: 16px;
-    width: 150px;
+    width: 90%;
     font-family: Lobster;
     margin-right: 5px;
-    background-color: crimson;
+    background-color: rgba(220, 20, 60, 0.849);
     border: 3px solid darkred;
     border-radius: 5px;
     transition: ease;
 }
 .newgembutton:hover {
-    font-size: 18px;
+    font-size: 16px;
     color: whitesmoke;
     transition: ease;
 }
