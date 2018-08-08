@@ -7,6 +7,15 @@ const btnSignUp = document.getElementById('btnSignUp');
 const btnLogout = document.getElementById('btnLogout');
 const btnPostSubmit = document.getElementById('btnPostSubmit');
 
+//SignUp Modal Nodes
+const userFirst = document.querySelector("[name='userfirstname']");
+const userLast = document.querySelector("[name='userlastname']");
+const userEmail = document.querySelector("[name='useremail']");
+const userPassword = document.querySelector("[name='userpassword']");
+const userSecret = document.querySelector("[name='usersecret']");
+
+const userSignUp = document.querySelector('[name="btnSignup"]');
+
 // listen for login
 loginForm.addEventListener('submit', e => {
     // collect fields
@@ -25,10 +34,10 @@ loginForm.addEventListener('submit', e => {
 });
 
 // listen for signup
-btnSignUp.addEventListener('click', e => {
+userSignUp.addEventListener('click', e => {
     // collect fields
-    const email = txtEmail.value;
-    const pass = txtPassword.value;
+    const email = userEmail.value;
+    const pass = userPassword.value;
     const auth = firebase.auth();
     // attempt signup
     const promise = auth.createUserWithEmailAndPassword(email, pass);
@@ -62,3 +71,4 @@ if (firebaseuser) {
     btnLogin.classList.remove('hide');
     loginForm.reset();
     }
+});

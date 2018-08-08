@@ -72,6 +72,7 @@
     border-radius: 5px;
     transition: ease;
     cursor: pointer;
+    text-align: center;
 }
 
 .buttonclass:hover {
@@ -275,8 +276,8 @@ label {
 
 .nextprev {
     font-size: 14px;
+    height: 25px;
     width: 70px;
-    height: 30px;
 }
 
 .colormodeicon {
@@ -394,7 +395,10 @@ label {
 
 .loginbasis {
     text-align: right;
-    flex-basis: 100%
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .legion {

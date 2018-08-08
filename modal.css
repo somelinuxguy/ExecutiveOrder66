@@ -12,6 +12,20 @@
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
+.modaloutter2 {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(2);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
 .modalcontent {
     display: flex;
     justify-content: space-between;
@@ -26,7 +40,22 @@
     height: 75%;
     border-radius: 10px;
     border: 2px solid black;
+}
 
+.modalcontent2 {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(to right, azure, darkgray);
+    padding: 25px;
+    width: 30%;
+    height: 60%;
+    border-radius: 10px;
+    border: 2px solid black;
 }
 
 .showmodal {
@@ -131,4 +160,10 @@
     .newgembutton {
         width: 30%; 
     }
+}
+
+.thankyou {
+    font-size: 100%;
+    font-family: 'Cabin', semi-bold;
+    text-align: center;
 }
