@@ -1,4 +1,4 @@
-var myForm = document.querySelector(".submissionform");
+var myForm = document.querySelector(".newpost");
 var startPost = 0;
 var numPosts = 5;
 var displayPostTotal;
