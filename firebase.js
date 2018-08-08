@@ -44,10 +44,10 @@ var loadPosts = function(filter, startPost = 0, numPosts = 5) {
   firebase.database().ref('posts').once('value').then(function(data) {
     console.log(data.val());
     convertToArray(data.val(), postList);
-    postList = postList.sort((a, b) => a.dateTime < b.dateTime);
+    postList = postList.sort((a, b) => b.dateTime - a.dateTime);
+    console.log('sorted', postList);
     displayPostTotal = postList.length;
     var filteredPostList;
-    console.log(filter);
     if (filter) {
       if (filter.hasOwnProperty('placeType')) {
         if (filter.placeType === "") {
