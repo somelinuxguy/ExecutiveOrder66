@@ -47,7 +47,7 @@ var loadPosts = function(filter, startPost = 0, numPosts = 5) {
     postList = postList.sort((a, b) => a.dateTime < b.dateTime);
     displayPostTotal = postList.length;
     var filteredPostList;
-    console.log(filter);
+    console.log("Filter: " + filter);
     if (filter) {
       if (filter.hasOwnProperty('placeType')) {
         if (filter.placeType === "") {

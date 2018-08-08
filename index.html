@@ -19,7 +19,7 @@
     <button class="legion">
         <img class="colormodeicon" src="images/LOD.png">
     </button>
-    <form action="" class="loginmodal">
+    <form action="" id="loginForm" class="loginmodal">
         <div class="loginmodal loginbox">
             <div class="loginbasis">
                 <input id="txtEmail" type="email" placeholder="Your Email" class="loginInput searchbar">
@@ -27,8 +27,8 @@
             </div>
             <div class="loginbasis">
                 <button id="btnLogin" class="buttonclass nextprev" type="submit">Log In</button>
-                <button id="btnLogout" class="buttonclass nextprev hide">Log Out</button>
-                <button id="btnSignUp" class="buttonclass nextprev">Sign Up</button>
+                <div id="btnLogout" class="buttonclass nextprev hide" >Log Out</div>
+                <div id="btnSignUp" class="buttonclass nextprev" >Sign Up</div>
             </div>
         </div>
     </form>
@@ -66,7 +66,6 @@
                                 <span>Experience:</span>  
                                 <textarea class="experienceinput" name="placeExperience" required></textarea>
                             </label>
-
                             <button class="newgembutton" type="submit">Submit Your Gem!</button>  
                         </form>
                         <button class="closebutton">&chi;</button>

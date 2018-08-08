@@ -1,14 +1,17 @@
 // find nodes
 const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
+const loginForm = document.getElementById('loginForm');
 const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
 const btnLogout = document.getElementById('btnLogout');
 const btnPostSubmit = document.getElementById('btnPostSubmit');
 
 // listen for login
-btnLogin.addEventListener('click', e => {
+loginForm.addEventListener('submit', e => {
     // collect fields
+    e.preventDefault();
+    console.log('Logging you in... ' + txtEmail.value + ' ' + txtPassword.value);
     const email = txtEmail.value;
     const pass = txtPassword.value;
     const auth = firebase.auth();
