@@ -69,6 +69,7 @@
     color: whitesmoke;
     border-radius: 5px;
     transition: ease;
+    cursor: pointer;
 }
 
 .buttonclass:hover {
@@ -109,6 +110,7 @@
     align-items: center;
 }
 .post {
+    position: relative;
     padding: 10px;
     width: 90%;
     display: flex;
@@ -164,7 +166,7 @@
 .postcontent {
     margin: 10px;
     padding-top: 10px;
-    word-break: break-all;
+    word-break: break-word;
     font-size: 16px;
     padding-left: 15px;
     padding-right: 15px;
@@ -223,9 +225,14 @@ label {
 }
 
 .deletePost {
-    font-family: Arial;
-    font-weight: bolder;
-    color: white;
+    position: absolute;
+    top: 0.4em;
+    right: 0.2em;
+    width: auto;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0.2em;
+    line-height: 1em;
 }
 
 .hide {
@@ -267,6 +274,25 @@ label {
 
 .colormodeicon {
     height: 50px;
+}
+
+.flashMessage {
+    position: fixed;
+    padding: 1em;
+    top: 0.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    transition-property: opacity;
+    transition-duration: 1s;
+    opacity: 1;
+    background: linear-gradient(to bottom, #a90329 0%,#8f0222 46%,#6d0019 100%);
+    border: 3px solid whitesmoke;
+    color: whitesmoke;
+    border-radius: 5px;
+}
+.flashMessage-hidden {
+    opacity: 0;
 }
 
 @media (min-width: 768px) {

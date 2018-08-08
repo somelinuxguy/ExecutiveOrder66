@@ -64,12 +64,13 @@ var populatePosts = function(postList, start, numPosts) {
         postContainer.appendChild(postMap);
 
         if ((firebaseuser) && (post.placeOwner === firebaseuser.uid)) {
-            var postDelete = document.createElement('div');
-            postDelete.classList.add('deletePost');
-            postDelete.textContent = "DEL";
+            var postDelete = document.createElement('button');
+            postDelete.classList.add('buttonclass', 'deletePost');
+            postDelete.textContent = "Delete";
             postContainer.appendChild(postDelete);
             var removePostDOM = function(event) {
                 removePost(post, firebaseuser);
+                displayFlashMessage('You have successfully removed post.');
             };
             postDelete.addEventListener('click', removePostDOM);
         }
@@ -92,6 +93,7 @@ var newPost = function(event) {
     var firebaseuser = firebase.auth().currentUser;
     if (firebaseuser) {
         toggleModal(event);
+        displayFlashMessage('You have successfully created a new post.');
         var handleURL = function(url) {
             console.log('New Post. Saving...');
             var myAuthor = document.querySelector('[name="author"]');
@@ -115,5 +117,6 @@ var newPost = function(event) {
         getImgSrc(myPlace.value, handleURL);
     } else {
         console.log('Sorry. You arent logged in.');
+        displayFlashMessage("Sorry. You aren't logged in.");
     }
 }

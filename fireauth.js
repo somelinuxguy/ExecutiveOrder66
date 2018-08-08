@@ -14,7 +14,11 @@ btnLogin.addEventListener('click', e => {
     const auth = firebase.auth();
     // attempt login
     const promise = auth.signInWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
+    promise.catch(e => {
+        console.log(e.message);
+        displayFlashMessage("Sorry. Your login failed.  Try again.");
+    });
+    promise.then(() => displayFlashMessage("You are logged in!"))
 });
 
 // listen for signup
@@ -25,11 +29,16 @@ btnSignUp.addEventListener('click', e => {
     const auth = firebase.auth();
     // attempt signup
     const promise = auth.createUserWithEmailAndPassword(email, pass);
-    promise.catch(e => console.log(e.message));
+    promise.catch(e => {
+        console.log(e.message);
+        displayFlashMessage("Sorry. Your sign up failed.  Try again.");
+    });
+    promise.then(() => displayFlashMessage("You are signed up and logged in."));
 });
 
 btnLogout.addEventListener('click', e => {
-    firebase.auth().signOut();
+    const promise = firebase.auth().signOut();
+    promise.then(() => displayFlashMessage("You are logged out."));
 });
 
 // are we logged in?
