@@ -43,17 +43,18 @@ btnLogout.addEventListener('click', e => {
 
 // are we logged in?
 firebase.auth().onAuthStateChanged(firebaseuser => {
-if (firebaseuser) {
-    console.log('Logged in: ' + firebaseuser.email);
-    btnLogout.classList.remove('hide');
-    btnLogin.classList.add('hide');
-    btnPostSubmit.classList.remove('hide');
-    btnSignUp.classList.add('hide');
-} else {
-    console.log('See ya later...');
-    btnLogout.classList.add('hide');
-    btnPostSubmit.classList.add('hide');
-    btnSignUp.classList.remove('hide');
-    btnLogin.classList.remove('hide');
-    }
+    loadPosts();
+    if (firebaseuser) {
+        console.log('Logged in: ' + firebaseuser.email);
+        btnLogout.classList.remove('hide');
+        btnLogin.classList.add('hide');
+        btnPostSubmit.classList.remove('hide');
+        btnSignUp.classList.add('hide');
+    } else {
+        console.log('See ya later...');
+        btnLogout.classList.add('hide');
+        btnPostSubmit.classList.add('hide');
+        btnSignUp.classList.remove('hide');
+        btnLogin.classList.remove('hide');
+        }
 });
