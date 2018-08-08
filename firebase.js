@@ -61,7 +61,11 @@ var loadPosts = function(filter, startPost = 0, numPosts = 5) {
         filteredPostList = postList.filter(post => post.placeName.toLowerCase().includes(filter.placeName.toLowerCase()) || post.placeExperience.toLowerCase().includes(filter.placeName.toLowerCase()));
         populatePosts(filteredPostList, startPost, numPosts);
         displayPostTotal = filteredPostList.length;
-      } 
+      } else if (filter.hasOwnProperty('placeRating')) {
+        filteredPostList = postList.filter(post => post.placeRating === filter.placeRating);
+        populatePosts(filteredPostList, startPost, numPosts);
+        displayPostTotal = filteredPostList.length;
+      }
     } else {
     populatePosts(postList, startPost, numPosts);
     }

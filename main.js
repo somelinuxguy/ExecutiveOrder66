@@ -12,6 +12,12 @@ filterElement.addEventListener('change', function(event) {
   loadPosts({placeType: event.currentTarget.value});
 })
 
+var filterRating = document.querySelector('[name="filterByRating"]');
+console.log(filterRating);
+filterRating.addEventListener('change', function(event) {
+  loadPosts({placeRating: event.currentTarget.value});
+})
+
 var searchBar = document.querySelector("[name='searchInput'")
 searchBar.addEventListener('input', function(event) {
   loadPosts({placeName: event.currentTarget.value});
