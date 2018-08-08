@@ -108,3 +108,15 @@ var nightMode = function() {
 var nightButton = document.querySelector('.nightmode');
 nightButton.addEventListener('click', nightMode);
 
+
+var displayFlashMessage = function(message) {
+  var flashMessageElement = document.createElement('div');
+  flashMessageElement.classList.add('flashMessage');
+  flashMessageElement.textContent = message;
+  document.body.appendChild(flashMessageElement);
+  setTimeout(() => {
+    flashMessageElement.classList.add('flashMessage-hidden');
+  }, 1000);
+};
+
+displayFlashMessage('hello...');

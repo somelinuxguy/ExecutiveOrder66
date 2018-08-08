@@ -269,6 +269,21 @@ label {
     height: 50px;
 }
 
+.flashMessage {
+    position: fixed;
+    top: 0.5em;
+    left: 50%;
+    display: block;
+    transition-property: opacity;
+    transition-duration: 1s;
+    background: white;
+    color: black;
+    opacity: 1;
+}
+.flashMessage-hidden {
+    opacity: 0;
+}
+
 @media (min-width: 768px) {
     .post {
         flex-direction: row;
