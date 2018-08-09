@@ -44,10 +44,14 @@ userSignUp.addEventListener('submit', e => {
     const promise = auth.createUserWithEmailAndPassword(email, pass);
     promise.catch(e => {
         console.log(e.message);
-        displayFlashMessage("Sorry. Your sign up failed.  Try again.");
+        displayFlashMessage(e.message);
     });
-    promise.then(() => displayFlashMessage("You are signed up and logged in."));
-    hideModal2();
+    promise.then(() => {
+        displayFlashMessage("You are signed up and logged in.")
+        hideModal2();
+    }
+);
+    
 });
 
 btnLogout.addEventListener('click', e => {

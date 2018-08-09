@@ -134,7 +134,7 @@ var displayFlashMessage = function(message) {
   document.body.appendChild(flashMessageElement);
   setTimeout(() => {
     flashMessageElement.classList.add('flashMessage-hidden');
-  }, 500);
+  }, 1000);
 };
 
-displayFlashMessage("Everything is awesome, everything is cool when your part of a team!");
+displayFlashMessage("Everything is awesome!!! Everything is cool when your part of a team!");

@@ -145,9 +145,8 @@ var newPost = function(event) {
     event.preventDefault();
     var firebaseuser = firebase.auth().currentUser;
     if (firebaseuser) {
-        toggleModal(event);
-        displayFlashMessage('You have successfully created a new post.');
         var handleURL = function(url) {
+            toggleModal(event);
             console.log('New Post. Saving...');
             var myAuthor = document.querySelector('[name="author"]');
             var myPlaceType = document.querySelector('[name="placeType"]');
