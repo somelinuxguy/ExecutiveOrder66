@@ -21,3 +21,12 @@ Residents of the city that want to share what makes Atlanta a GEM.
 
 # Elevator pitch
 You are in Atlanta only briefly, a visit or perhaps bussiness.  Probably because you flew in here on your way someplace better. You want to know what to see here, and you want it from people who love the city, not some commercial crap.
+
+# To Do
+Wishlist items... It would be great to spend a minute on:
+* Consistent Style
+* Profit
+* Optimize the code
+* Image/map loading with google is slow... spinner?
+* Matts background image is too big
+* Check out the site load in Lighthouse and in the Network panel, fix fix fix
