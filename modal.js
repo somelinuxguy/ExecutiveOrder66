@@ -56,3 +56,14 @@ closeButton.addEventListener('click', hideModal);
 closeButton2.addEventListener('click', hideModal2);
 // legion of doom button
 window.addEventListener('click', windowOnClick);
+
+var modalIMG = document.querySelector('.modalLODImage');
+modalIMG.addEventListener('mouseover', function(event) {
+    modalIMG.setAttribute('src', 'images/supervillians.png');
+});
+
+modalIMG.addEventListener('mouseout', function(event) {
+    modalIMG.setAttribute('src', 'images/group.jpg');
+});
+
+

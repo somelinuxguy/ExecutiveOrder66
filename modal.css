@@ -179,9 +179,9 @@
 }
 
 .modalLODImage {
-    max-width: 250px;
-    border: 2px solid black;
-    border-radius: 3px;
+    max-width: 300px;
+    border: 3px solid black;
+    border-radius: 5px;
 }
 
 @media (min-width: 768px) {
@@ -204,5 +204,15 @@
 
 .eviltext {
     font-size: 16px;
-    font-family: 'Nosifer'
+    color: rgb(221, 219, 219);
+    background-color: rgba(111, 7, 163, 0.616);
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 4px;
+    font-family: 'Nosifer';
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
 }
