@@ -134,6 +134,9 @@ var displayFlashMessage = function(message) {
   document.body.appendChild(flashMessageElement);
   setTimeout(() => {
     flashMessageElement.classList.add('flashMessage-hidden');
+    setTimeout(() => {
+      flashMessageElement.remove();
+    }, 500);
   }, 1000);
 };
 

@@ -50,7 +50,7 @@
     transform: translate(-50%, -50%);
     background: linear-gradient(to right, azure, darkgray);
     padding: 25px;
-    width: 50%;
+    min-width: 50%;
     height: 75%;
     border-radius: 10px;
     border: 2px solid black;
@@ -66,7 +66,7 @@
     transform: translate(-50%, -50%);
     background: linear-gradient(to right, azure, darkgray);
     padding: 25px;
-    width: 30%;
+    min-width: 30%;
     height: 60%;
     border-radius: 10px;
     border: 2px solid black;
