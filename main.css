@@ -298,6 +298,7 @@ label {
     border: 3px solid whitesmoke;
     color: whitesmoke;
     border-radius: 5px;
+    z-index: 3;
 }
 .flashMessage-hidden {
     opacity: 0;
