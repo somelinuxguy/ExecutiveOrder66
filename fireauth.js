@@ -14,7 +14,7 @@ const userEmail = document.querySelector("[name='useremail']");
 const userPassword = document.querySelector("[name='userpassword']");
 const userSecret = document.querySelector("[name='usersecret']");
 
-const userSignUp = document.querySelector('[name="btnSignup"]');
+const userSignUp = document.querySelector('.signup');
 
 // listen for login
 loginForm.addEventListener('submit', e => {
@@ -34,7 +34,8 @@ loginForm.addEventListener('submit', e => {
 });
 
 // listen for signup
-userSignUp.addEventListener('click', e => {
+userSignUp.addEventListener('submit', e => {
+    e.preventDefault();
     // collect fields
     const email = userEmail.value;
     const pass = userPassword.value;
@@ -46,6 +47,7 @@ userSignUp.addEventListener('click', e => {
         displayFlashMessage("Sorry. Your sign up failed.  Try again.");
     });
     promise.then(() => displayFlashMessage("You are signed up and logged in."));
+    hideModal2();
 });
 
 btnLogout.addEventListener('click', e => {
