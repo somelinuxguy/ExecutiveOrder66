@@ -14,7 +14,9 @@ var displayData = function(data) {
   document.querySelector('.image-list').appendChild(listItemHolder);
 }
 var search = function(query) {
-  $.getJSON('https://www.googleapis.com/customsearch/v1/?cx=010289098104679464911:xwek1ikjodk&key=' + googleAPIKey + '&searchType=image&num=1&siteSearch=*.facebook.com/*&siteSearchFilter=e&q=' + query, displayData);
+  var googleImagePromise = fetch('https://www.googleapis.com/customsearch/v1/?cx=010289098104679464911:xwek1ikjodk&key=' + googleAPIKey + '&searchType=image&num=1&siteSearch=*.facebook.com/*&siteSearchFilter=e&q=' + query);
+  googleImagePromise.then(response => response.json())
+  .then(displayData)
 }
 var searchForm = document.querySelector('.search-form');
 console.log(searchForm);
